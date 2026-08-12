@@ -53,3 +53,4 @@ The built files will be in the `dist` directory.
 
 ---
 Designed with high-contrast `#FF4F01` orange and black aesthetics for a professional gym experience.
+# deployment fix
