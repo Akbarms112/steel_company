@@ -48,7 +48,7 @@ export const COMPANY_INFO = {
   mappedLocation: "Sanganampatti, Pulikarai-Po, Palacode-TK, Dharmapuri - 636808",
   publicRating: "4.7 / 5 (Verified Reviews)",
   phone: "+91 80567 80664",
-  whatsapp: "918056780664",
+  whatsapp: "919543423625",
   mobiles: ["+91 80567 80664", "+91 93442 80443"],
   gstin: "33FIXPM3243P1ZF",
   email: "enquiry@bagavansteels.com",
