@@ -9,116 +9,188 @@ import img1 from '../img/images (1).jpeg';
 import img2 from '../img/images (2).jpeg';
 import img3 from '../img/images (3).jpeg';
 
+import roofingSteel1 from '../img/roofing_steel.jpeg';
+import roofingSteel2 from '../img/roofing_steel2.jpeg';
+import roofingSteel3 from '../img/roofing_steel3.jpeg';
+import sheet1 from '../img/sheet.jpeg';
+import sheet2 from '../img/sheet2.jpeg';
+import structSteel1 from '../img/structure_steel.jpeg';
+import structSteel2 from '../img/structure_steel2.jpeg';
+
 export const STEEL_IMAGES = {
-  hero: steelHero,
-  banner: steel5Png,
+  hero: roofingSteel1,
+  banner: sheet1,
+  roofingJindal: sheet2,
+  roofingSteel2: roofingSteel2,
+  roofingSteel3: roofingSteel3,
+  tmtRods: steel3,
+  structuralMain: structSteel1,
+  structuralPipes: structSteel2,
   warehouse: steel1,
-  rods: steel3,
-  pipes: steel4,
+  heavyPipes: steel4,
   cement: steel5Jpg,
   signboard: imgMain,
-  structural: img1,
-  sheets: img2,
+  structuralAlt: img1,
+  sheetsAlt: img2,
   inventory: img3,
 };
 
 export const COMPANY_INFO = {
-  name: "TRICHY STEEL COMPANY",
-  tagline: "Iron & Cement Merchants",
-  establishedYear: 2008,
-  mainBranchLocation: "Dharmapuri District",
-  phone: "04342 - 2609194",
-  mobiles: ["98424 25147", "99409 97604"],
-  email: "trichysteel.dpi@gmail.com",
-  address: "30/7, Krishnagiri Main Road, Opp : S.M.Arumugam Polytechnic, Dharmapuri - 636702, Tamilnadu, India.",
-  copyright: "COPYRIGHT (C) 2015 TRICHY STEEL COMPANY. ALL RIGHTS RESERVED. POWERED BY DAZZLE SYSTECH INDIA PRIVATE LIMITED.",
-  description: "TRICHY STEEL COMPANY is one of the most famous Iron and Cement merchants in Tamilnadu particularly around Dharmapuri District. Our success lies on Customer Satisfaction and the Quality of the Products. We are authorized dealers of Madras Cement Ltd, SuryaDev Construction Bars Company and Agni Steels Pvt Ltd.",
-  aboutStory: "TRICHY STEEL COMPANY was started in the year of 2008. Within 4 years, we, TRICHY STEEL COMPANY tasted tremendous success in our service. Our main goal is our Customer Satisfaction. We are delivering very good Products and offering better Customer Service."
+  name: "BAGAVAN STEELS",
+  tagline: "Quality Steel & Roofing Solutions for Your Construction Needs",
+  subMessage: "Reliable steel and roofing materials for homes, businesses, contractors and industrial construction projects.",
+  location: "Dharmapuri & Surrounding Areas, Tamil Nadu",
+  primaryArea: "Pulikarai / Dharmapuri, Tamil Nadu",
+  mappedLocation: "Sangampatti, Selliyampatti, Tamil Nadu 636809",
+  publicRating: "4.7 / 5 (Verified Reviews)",
+  phone: "+91 98765 43210",
+  whatsapp: "919876543210",
+  mobiles: ["+91 98765 43210", "+91 98424 25147"],
+  email: "enquiry@bagavansteels.com",
+  address: "643F+V62, Sangampatti, Selliyampatti, Dharmapuri District, Tamil Nadu - 636809",
+  copyright: "COPYRIGHT (C) 2026 BAGAVAN STEELS. ALL RIGHTS RESERVED.",
+  description: "Bagavan Steels is a premier steel and roofing materials supplier serving Dharmapuri and nearby regions in Tamil Nadu. We specialize in Jindal Trapezoidal PPGL Roofing Sheets, high-strength TMT Bars, MS Structural Steel, and fabrication materials.",
+  aboutStory: "Bagavan Steels provides construction-focused steel and roofing solutions for homeowners, civil contractors, commercial builders, and fabricators. Our focus is on supplying dependable materials, helping customers select products suited to their exact structural requirements, and delivering competitive wholesale quotations with responsive local availability."
 };
 
-export const AUTHORIZED_DEALERS = [
-  { id: 'suryadev', name: 'SuryaDev Construction Bars', title: 'SuryaDev Fe 500 TMT ISI', award: 'Appreciation Award Winner', badge: 'Authorized Dealer' },
-  { id: 'agni', name: 'AGNI TMT Steel Rods', title: 'AGNI 500 TMT ISI', award: 'Certified Premium Dealer', badge: 'Authorized Dealer' },
-  { id: 'madras', name: 'Madras Cements Ltd', title: 'Madras Cement', award: 'Official Regional Merchant', badge: 'Authorized Dealer' },
-  { id: 'ashok', name: 'Ashok ISI TMT Bars', title: 'Ashok TMT ISI', award: 'Top Distribution Partner', badge: 'Authorized Dealer' },
-  { id: 'ultratech', name: 'UltraTech Cements', title: 'Ultra Tech Cements', award: 'Authorized Merchant', badge: 'Authorized Dealer' },
-  { id: 'ramco', name: 'Ramco Cements Bags', title: 'Ramco Cement & AC Sheets', award: 'Authorized Merchant', badge: 'Authorized Dealer' },
-  { id: 'maruthi', name: 'Maruthi OPC Super Tech Cement', title: 'Maruthi OPC Cement Bags', award: 'Authorized Supplier', badge: 'Authorized Dealer' },
+export const VERIFIED_DEALERS = [
+  { id: 'jindal', name: 'Jindal Trapezoidal PPGL', title: 'Jindal Trapezoidal PPGL Sheets', badge: 'Verified Supplier', color: 'from-amber-500 to-amber-700' },
+  { id: 'tmt', name: 'TMT Reinforcement Bars', title: 'High Yield Strength TMT Bars', badge: 'Construction Grade', color: 'from-slate-700 to-slate-900' },
+  { id: 'ppgl', name: 'Color Coated PPGL Sheets', title: 'PPGL & GI Roofing Sheets', badge: 'ISO Weatherproof', color: 'from-amber-600 to-slate-800' },
+  { id: 'ms-steel', name: 'MS Structural Steel', title: 'MS Angles, Channels & Beams', badge: 'Industrial Stock', color: 'from-slate-800 to-amber-600' },
 ];
 
 export const PRODUCTS_CATALOG = [
   {
-    id: 'cement',
-    name: 'Cement & Super Tech Bags',
-    category: 'Cement',
-    image: STEEL_IMAGES.cement,
-    items: ['Madras Cement Ltd', 'Ultra Tech Cements', 'Ramco Cements Bags', 'Maruthi OPC Super Tech Cement Bags'],
-    description: 'High-grade building cement from India\'s most trusted manufacturers ensuring maximum compressive strength and lifespan.'
+    id: 'roofing-sheets',
+    name: 'Jindal Trapezoidal PPGL & Colour-Coated Sheets',
+    category: 'Roofing Sheets',
+    image: STEEL_IMAGES.banner,
+    verified: true,
+    items: [
+      'Jindal Trapezoidal PPGL Roofing Sheets',
+      'PPGL Colour-Coated Roofing Sheets',
+      'GI / GC Galvanized Iron Sheets',
+      'Industrial Heavy Duty Roofing Sheets',
+      'Roofing Ridge & Flashing Accessories'
+    ],
+    description: 'High durability, weather-resistant Jindal Trapezoidal PPGL and colour-coated sheets ideal for residential roofs, warehouses, and industrial sheds.'
   },
   {
-    id: 'tmt-rods',
-    name: 'TMT ISI Iron & Steel Rods',
-    category: 'Iron & TMT',
-    image: STEEL_IMAGES.rods,
-    items: ['Suryadev Fe 500 TMT ISI', 'AGNI 500 TMT ISI', 'Kanishk TMT ISI', 'Ashok TMT ISI', 'PSK TMT ISI Rods'],
-    description: 'Corrosion resistant high yield strength Thermo-Mechanically Treated bars engineered for earthquakes & heavy loads.'
+    id: 'tmt-steel',
+    name: 'TMT & Reinforcement Steel Bars',
+    category: 'TMT Steel',
+    image: STEEL_IMAGES.tmtRods,
+    verified: true,
+    items: [
+      'High-Strength TMT Bars (Fe 500 / 550 D)',
+      'Reinforcement Steel Bars',
+      'Mild Steel (MS) Round Bars',
+      'Civil Construction Steel Rods',
+      'Cut & Bend Steel Supply'
+    ],
+    description: 'Earthquake-resistant, corrosion-treated TMT reinforcement bars designed for high-rise buildings, home foundations, and civil infrastructure.'
   },
   {
-    id: 'structural',
-    name: 'Iron Pipes, Plates & Structural Steel',
+    id: 'structural-steel',
+    name: 'MS Structural Steel Sections',
     category: 'Structural Steel',
-    image: STEEL_IMAGES.pipes,
-    items: ['Iron Pipes & Plates', 'Metal Rods and Pipes', 'Vizag & Tata Joists', 'Channels, Angles & Flats'],
-    description: 'Precision manufactured iron pipes, structural channels, joists, and heavy metal plates for industrial construction.'
+    image: STEEL_IMAGES.structuralMain,
+    verified: true,
+    items: [
+      'MS Equal Angles (L-Angle)',
+      'MS Channels (C-Channel)',
+      'MS Flat Bars & MS Plates',
+      'MS Beams & I-Sections',
+      'Heavy Metal Plates'
+    ],
+    description: 'Standard and custom mild steel structural sections used for shed fabrication, building frameworks, and heavy industrial support structures.'
   },
   {
-    id: 'roofing',
-    name: 'Cool Roof & AC Sheets',
-    category: 'Roofing',
-    image: STEEL_IMAGES.sheets,
-    items: ['Ramco AC Sheets', 'Swasthik AC Sheets', 'Jayam Metal Color Cool Roof ISO Sheets'],
-    description: 'ISO certified weather-proof color-coated cool roof metal sheets and classic durable AC sheets.'
+    id: 'pipes-tubing',
+    name: 'MS Pipes & Hollow Sections',
+    category: 'Pipes & Tubes',
+    image: STEEL_IMAGES.structuralPipes,
+    verified: true,
+    items: [
+      'Square Hollow Sections (SHS)',
+      'Rectangular Hollow Sections (RHS)',
+      'Round MS Pipes',
+      'Galvanized Iron (GI) Pipes',
+      'Fabrication Steel Tubes'
+    ],
+    description: 'Precision engineered square, rectangular, and round steel pipes suitable for gates, trusses, handrails, and agricultural structures.'
   }
 ];
 
-export const FEATURES_LIST = [
-  "Authorized Dealer of Surya Dev Construction Bars",
-  "Authorized Dealer of AGNI TMT Steel rods and bars",
-  "Authorized Dealer of Madras Cements Ltd",
-  "Authorized Dealer of Ashok ISI TMT Bars",
-  "Authorized Dealer of Ultra Tech Cements",
-  "Authorized Dealer of Ramco Cements Bags",
-  "Authorized Dealer of Maruthi OPC Super Tech Cement Bags",
-  "Ramco and Swasthik AC Sheets",
-  "Jayam Metal color cool roof ISO Sheets",
-  "Available Vizag & Tata, Joists, Channels, Angles, Flats etc.",
-  "We have Appreciation award from SuryaDev Construction Bars",
-  "All companies Steel rods - Suryadev Fe 500 TMT ISI, AGNI 500 TMT ISI, Kanishk TMT ISI, Ashok TMT ISI, PSK TMT ISI",
-  "Excellent Customer Service"
+export const TARGET_CUSTOMERS = [
+  {
+    segment: 'Individual Home Builders',
+    requirement: 'New houses, extensions, garages, residential roofs, and home foundation steel.',
+    icon: 'Home'
+  },
+  {
+    segment: 'Civil Contractors',
+    requirement: 'TMT bars, structural steel, roofing sheets, and bulk site delivery.',
+    icon: 'HardHat'
+  },
+  {
+    segment: 'Builders & Construction Companies',
+    requirement: 'Residential, commercial, warehouse, and large infrastructure projects.',
+    icon: 'Building'
+  },
+  {
+    segment: 'Industrial Customers',
+    requirement: 'Factories, workshops, industrial sheds, and heavy steel structures.',
+    icon: 'Factory'
+  },
+  {
+    segment: 'Fabricators & Welders',
+    requirement: 'Steel sections, pipes, MS angles, plates, and custom fabrication stock.',
+    icon: 'Wrench'
+  },
+  {
+    segment: 'Farmers & Agricultural Customers',
+    requirement: 'Farm sheds, cattle sheds, crop storage structures, and durable roofing.',
+    icon: 'Tractor'
+  }
 ];
 
-export const BRANCHES = [
-  { name: "Dharmapuri (Head Office)", address: "30/7, Krishnagiri Main Road, Opp: S.M.Arumugam Polytechnic", phone: "04342 - 2609194", status: "Main HQ" },
-  { name: "Thiruvarur", address: "Central Steel Complex, Thiruvarur Road", phone: "+91 98424 25147", status: "Active Branch" },
-  { name: "Aranthangi", address: "Main Market Road, Aranthangi", phone: "+91 99409 97604", status: "Active Branch" },
-  { name: "Paramakudi", address: "Station Road, Paramakudi", phone: "+91 98424 25147", status: "Active Branch" },
-  { name: "Aruppukottai", address: "Bypass Junction, Aruppukottai", phone: "+91 99409 97604", status: "Active Branch" },
-  { name: "Musuri (Namakkal)", address: "Trichy-Namakkal Highway, Musuri", phone: "04342 - 2609194", status: "Active Branch" },
-  { name: "Nannilam", address: "Bus Stand Commercial Zone, Nannilam", phone: "+91 98424 25147", status: "Active Branch" },
-  { name: "Puthukottai", address: "Industrial Estate, Puthukottai", phone: "+91 99409 97604", status: "Active Branch" },
-  { name: "Kumbakonam", address: "Tanjore Main Road, Kumbakonam", phone: "+91 98424 25147", status: "Active Branch" },
-  { name: "Soolur (Coimbatore)", address: "Trichy Road, Soolur, Coimbatore", phone: "+91 99409 97604", status: "Active Branch" },
+export const TRUST_ELEMENTS = [
+  {
+    title: 'Quality Materials',
+    desc: 'Products rigorously selected for reliable residential, commercial, and industrial construction applications.',
+    icon: 'CheckCircle'
+  },
+  {
+    title: 'Competitive Quotations',
+    desc: 'Transparent pricing based on your exact product type, grade, weight, and delivery location requirements.',
+    icon: 'Tag'
+  },
+  {
+    title: 'Local Availability',
+    desc: 'Prompt local supply and ready stock serving Dharmapuri, Pulikarai, Selliyampatti, and nearby regions.',
+    icon: 'MapPin'
+  },
+  {
+    title: 'Bulk Requirements',
+    desc: 'Specialized volume solutions and direct truckloads for civil contractors, builders, and factories.',
+    icon: 'Truck'
+  },
+  {
+    title: 'Quick Enquiry',
+    desc: 'Direct phone and instant WhatsApp quote system for fast response and estimate generation.',
+    icon: 'MessageSquare'
+  }
 ];
 
 export const GALLERY_ITEMS = [
-  { id: 1, category: 'TMT Steel Rods', title: 'High Strength TMT ISI Steel Rods', img: STEEL_IMAGES.rods, badge: 'TMT ISI' },
-  { id: 2, category: 'Warehouse & Inventory', title: 'Trichy Steel Central Depot Stock', img: STEEL_IMAGES.warehouse, badge: 'Stockyard' },
-  { id: 3, category: 'Structural Steel', title: 'Heavy Iron Pipes & Plates Stock', img: STEEL_IMAGES.pipes, badge: 'Pipes & Channels' },
-  { id: 4, category: 'Cement Bags', title: 'Madras & UltraTech Premium Cement Bags', img: STEEL_IMAGES.cement, badge: 'Cement Depot' },
-  { id: 5, category: 'Signboard & Store', title: 'Original Trichy Steel Company Outlet', img: STEEL_IMAGES.signboard, badge: 'Storefront' },
-  { id: 6, category: 'Roofing Sheets', title: 'Jayam Metal Color Cool Roof ISO Sheets', img: STEEL_IMAGES.sheets, badge: 'ISO Cool Roof' },
-  { id: 7, category: 'Structural Steel', title: 'Tata & Vizag Angles, Channels & Joists', img: STEEL_IMAGES.structural, badge: 'Tata & Vizag' },
-  { id: 8, category: 'Warehouse & Inventory', title: 'Bulk Steel Yard Distribution Depot', img: STEEL_IMAGES.inventory, badge: 'Logistics' },
-  { id: 9, category: 'TMT Steel Rods', title: 'Suryadev Fe 500 & AGNI 500 TMT Bundles', img: STEEL_IMAGES.hero, badge: 'Fe 500 TMT' },
-  { id: 10, category: 'Signboard & Store', title: 'Trichy Steel Company Entrance Banner', img: STEEL_IMAGES.banner, badge: 'Main HQ' },
+  { id: 1, category: 'Roofing Sheets', title: 'Jindal Trapezoidal PPGL Roofing Sheet', img: STEEL_IMAGES.banner, badge: 'Jindal PPGL' },
+  { id: 2, category: 'Roofing Sheets', title: 'Colour-Coated Weatherproof Roof Sheets', img: STEEL_IMAGES.roofingJindal, badge: 'Colour Coated' },
+  { id: 3, category: 'TMT Steel', title: 'High Yield Strength TMT Reinforcement Rods', img: STEEL_IMAGES.tmtRods, badge: 'TMT Bars' },
+  { id: 4, category: 'Structural Steel', title: 'MS Angles, Channels & Beams Stock', img: STEEL_IMAGES.structuralMain, badge: 'MS Structural' },
+  { id: 5, category: 'Pipes & Tubes', title: 'Square & Rectangular Pipes Inventory', img: STEEL_IMAGES.structuralPipes, badge: 'SHS / RHS' },
+  { id: 6, category: 'Roofing Sheets', title: 'Industrial Shed Roofing Installation', img: STEEL_IMAGES.roofingSteel2, badge: 'Industrial' },
+  { id: 7, category: 'Structural Steel', title: 'Heavy Duty Metal Plates & Flats', img: STEEL_IMAGES.roofingSteel3, badge: 'Metal Plates' },
+  { id: 8, category: 'Warehouse', title: 'Bagavan Steels Central Storage Yard', img: STEEL_IMAGES.warehouse, badge: 'Stockyard' },
 ];
