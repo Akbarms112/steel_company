@@ -17,10 +17,14 @@ import sheet2 from '../img/sheet2.jpeg';
 import structSteel1 from '../img/structure_steel.jpeg';
 import structSteel2 from '../img/structure_steel2.jpeg';
 
+import roofingStacked from '../img/roofing.png';
+import jindalSabrang from '../img/jindal-sabrang-roofing-sheet-640x640.png';
+
 export const STEEL_IMAGES = {
-  hero: roofingSteel1,
-  banner: sheet1,
-  roofingJindal: sheet2,
+  hero: roofingStacked,
+  banner: jindalSabrang,
+  roofingJindal: jindalSabrang,
+  roofingSheetsStacked: roofingStacked,
   roofingSteel2: roofingSteel2,
   roofingSteel3: roofingSteel3,
   tmtRods: steel3,
@@ -54,10 +58,10 @@ export const COMPANY_INFO = {
 };
 
 export const VERIFIED_DEALERS = [
-  { id: 'jindal', name: 'Jindal Trapezoidal PPGL', title: 'Jindal Trapezoidal PPGL Sheets', badge: 'Verified Supplier', color: 'from-amber-500 to-amber-700' },
+  { id: 'jindal', name: 'Jindal Trapezoidal PPGL', title: 'Jindal Trapezoidal PPGL Sheets', badge: 'Verified Supplier', color: 'from-slate-700 to-slate-900' },
   { id: 'tmt', name: 'TMT Reinforcement Bars', title: 'High Yield Strength TMT Bars', badge: 'Construction Grade', color: 'from-slate-700 to-slate-900' },
-  { id: 'ppgl', name: 'Color Coated PPGL Sheets', title: 'PPGL & GI Roofing Sheets', badge: 'ISO Weatherproof', color: 'from-amber-600 to-slate-800' },
-  { id: 'ms-steel', name: 'MS Structural Steel', title: 'MS Angles, Channels & Beams', badge: 'Industrial Stock', color: 'from-slate-800 to-amber-600' },
+  { id: 'ppgl', name: 'Color Coated PPGL Sheets', title: 'PPGL & GI Roofing Sheets', badge: 'ISO Weatherproof', color: 'from-slate-800 to-slate-900' },
+  { id: 'ms-steel', name: 'MS Structural Steel', title: 'MS Angles, Channels & Beams', badge: 'Industrial Stock', color: 'from-slate-800 to-slate-950' },
 ];
 
 export const PRODUCTS_CATALOG = [
@@ -185,8 +189,8 @@ export const TRUST_ELEMENTS = [
 ];
 
 export const GALLERY_ITEMS = [
-  { id: 1, category: 'Roofing Sheets', title: 'Jindal Trapezoidal PPGL Roofing Sheet', img: STEEL_IMAGES.banner, badge: 'Jindal PPGL' },
-  { id: 2, category: 'Roofing Sheets', title: 'Colour-Coated Weatherproof Roof Sheets', img: STEEL_IMAGES.roofingJindal, badge: 'Colour Coated' },
+  { id: 1, category: 'Roofing Sheets', title: 'Jindal Sabrang PPGL Roofing Sheet', img: STEEL_IMAGES.banner, badge: 'Jindal PPGL' },
+  { id: 2, category: 'Roofing Sheets', title: 'Factory Stock Trapezoidal PPGL Sheets', img: STEEL_IMAGES.roofingSheetsStacked, badge: 'Factory Depot' },
   { id: 3, category: 'TMT Steel', title: 'High Yield Strength TMT Reinforcement Rods', img: STEEL_IMAGES.tmtRods, badge: 'TMT Bars' },
   { id: 4, category: 'Structural Steel', title: 'MS Angles, Channels & Beams Stock', img: STEEL_IMAGES.structuralMain, badge: 'MS Structural' },
   { id: 5, category: 'Pipes & Tubes', title: 'Square & Rectangular Pipes Inventory', img: STEEL_IMAGES.structuralPipes, badge: 'SHS / RHS' },
