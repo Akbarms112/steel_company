@@ -42,7 +42,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 flex flex-col font-sans selection:bg-amber-400 selection:text-gray-950">
+    <div className="min-h-screen bg-white text-slate-950 flex flex-col font-sans selection:bg-slate-900 selection:text-white">
       <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
 
       <main className="flex-1">
@@ -63,15 +63,15 @@ export default function App() {
       <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
         <button
           onClick={openWhatsApp}
-          className="w-13 h-13 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 ring-4 ring-emerald-600/30"
+          className="w-13 h-13 rounded-full bg-slate-900 hover:bg-slate-800 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-all duration-300 ring-4 ring-slate-900/30 border border-slate-700"
           title="Chat on WhatsApp"
         >
-          <MessageSquare className="w-6 h-6" />
+          <MessageSquare className="w-6 h-6 text-slate-200" />
         </button>
 
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="w-13 h-13 rounded-full bg-gray-900 text-white hover:bg-gray-800 flex items-center justify-center shadow-xl hover:scale-110 transition-all duration-300 border border-gray-800"
+          className="w-13 h-13 rounded-full bg-white text-slate-950 hover:bg-slate-100 flex items-center justify-center shadow-xl hover:scale-110 transition-all duration-300 border border-slate-300"
           title="Scroll to Top"
         >
           <ArrowUp className="w-5 h-5" />

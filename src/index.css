@@ -3,7 +3,8 @@
 @layer base {
   body {
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: #f9fafb;
+    background-color: #f8fafc;
+    color: #0f172a;
   }
   h1, h2, h3, h4, h5, h6, .font-heading {
     font-family: 'Outfit', sans-serif;
@@ -14,52 +15,65 @@
   .perspective-1000 { perspective: 1000px; }
 
   .glass-white {
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(226, 232, 240, 0.8);
   }
 
-  /* Gold headline gradient (kept for contrast on dark hero) */
-  .text-gradient-gold {
-    background: linear-gradient(135deg, #c9a84c 0%, #e2c27d 50%, #a87c2a 100%);
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Monochromatic Silver & Platinum Gradient */
+  .text-gradient-silver {
+    background: linear-gradient(135deg, #0f172a 0%, #334155 50%, #475569 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Subtle dot pattern */
+  .text-gradient-metallic {
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .bg-light-pattern {
-    background-color: #f9fafb;
-    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+    background-color: #f8fafc;
+    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
     background-size: 24px 24px;
   }
 
-  /* Primary black button */
-  .btn-primary {
-    background: #111827;
-    color: white;
+  /* Premium Black Button */
+  .btn-black {
+    background: #090d16;
+    color: #ffffff;
     font-weight: 700;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 18px rgba(9, 13, 22, 0.25);
   }
-  .btn-primary:hover {
-    background: #1f2937;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.28);
+  .btn-black:hover {
+    background: #1e293b;
+    box-shadow: 0 8px 24px rgba(9, 13, 22, 0.35);
     transform: translateY(-2px);
   }
 
-  /* btn-gold alias → black for consistency */
-  .btn-gold {
-    background: #111827;
-    color: white;
+  /* Premium Gray Outline Button */
+  .btn-outline-gray {
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
     font-weight: 700;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
   }
-  .btn-gold:hover {
-    background: #1f2937;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.26);
+  .btn-outline-gray:hover {
+    border-color: #0f172a;
+    background: #f8fafc;
     transform: translateY(-2px);
   }
 
@@ -68,13 +82,14 @@
   }
   .card-hover:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
   }
 }
 
-/* Charcoal scrollbar */
+/* Charcoal Scrollbar */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #9ca3af; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #111827; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #0f172a; }
+
 html { scroll-behavior: smooth; }
