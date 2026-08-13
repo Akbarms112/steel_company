@@ -11,8 +11,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
     { id: 'services', label: 'Products' },
     { id: 'customers', label: 'Target Customers' },
     { id: 'gallery', label: 'Gallery' },
-    { id: 'quote', label: 'Request Quote' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'contact', label: 'Contact & Quote' },
   ];
 
   const handleNavClick = (id) => {
@@ -28,7 +27,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
 
   return (
     <header className="sticky top-0 z-50 bg-slate-950 text-white border-b border-slate-800 shadow-xl">
-      {/* Top Info Bar — Monochrome Dark Slate */}
+      {/* Top Info Bar */}
       <div className="bg-slate-900 border-b border-slate-800 text-xs py-2 px-4 text-slate-300">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
           <div className="flex flex-wrap items-center gap-6">
@@ -77,7 +76,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
           </div>
         </button>
 
-        {/* Desktop Navigation Links with Generous Spacing */}
+        {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-2 bg-slate-900/90 p-1.5 rounded-2xl border border-slate-800">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
@@ -100,7 +99,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
           })}
         </nav>
 
-        {/* Action Buttons — Sleek Black & Slate Gray */}
+        {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-3">
           <button
             onClick={openWhatsApp}
@@ -111,7 +110,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
           </button>
 
           <button
-            onClick={() => handleNavClick('quote')}
+            onClick={() => handleNavClick('contact')}
             className="px-5 py-2.5 rounded-xl bg-white hover:bg-slate-200 text-slate-950 font-black text-xs shadow-lg flex items-center gap-1.5 transition-all"
           >
             <span>Get Quote</span>
@@ -158,7 +157,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
               <span>WhatsApp</span>
             </button>
             <button
-              onClick={() => handleNavClick('quote')}
+              onClick={() => handleNavClick('contact')}
               className="py-3 rounded-xl bg-white text-slate-950 font-black text-xs text-center"
             >
               Request Quote

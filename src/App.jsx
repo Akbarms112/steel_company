@@ -8,10 +8,9 @@ import AboutView from './components/AboutView';
 import ServicesView from './components/ServicesView';
 import TargetCustomersView from './components/TargetCustomersView';
 import GalleryView from './components/GalleryView';
-import QuoteView from './components/QuoteView';
 import ContactView from './components/ContactView';
 
-import { Phone, ArrowUp, MessageSquare } from 'lucide-react';
+import { ArrowUp, MessageSquare } from 'lucide-react';
 import { COMPANY_INFO } from './data/steelData';
 
 export default function App() {
@@ -30,8 +29,8 @@ export default function App() {
       case 'services':  return <ServicesView setActiveTab={setActiveTab} />;
       case 'customers': return <TargetCustomersView setActiveTab={setActiveTab} />;
       case 'gallery':   return <GalleryView setActiveTab={setActiveTab} />;
-      case 'quote':     return <QuoteView />;
       case 'contact':   return <ContactView />;
+      case 'quote':     return <ContactView />;
       default:          return <HomeView setActiveTab={setActiveTab} />;
     }
   };
