@@ -226,6 +226,16 @@ export default function ContactView() {
                       </div>
 
                       <div className="flex items-center gap-3">
+                        <Phone className="w-4 h-4 text-slate-400 shrink-0" />
+                        <p><span className="text-slate-400 text-xs">Mobile :</span> <span className="font-bold text-slate-200">{COMPANY_INFO.mobiles.join(' / ')}</span></p>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <Mail className="w-4 h-4 text-slate-400 shrink-0" />
+                        <p><span className="text-slate-400 text-xs">GSTIN :</span> <span className="font-bold font-mono text-slate-200">{COMPANY_INFO.gstin}</span></p>
+                      </div>
+
+                      <div className="flex items-center gap-3">
                         <Mail className="w-4 h-4 text-slate-400 shrink-0" />
                         <p><span className="text-slate-400 text-xs">Email :</span> <a href={`mailto:${COMPANY_INFO.email}`} className="font-bold text-slate-300 hover:underline">{COMPANY_INFO.email}</a></p>
                       </div>

@@ -93,6 +93,14 @@ export default function Footer({ setActiveTab }) {
                 <span>Phone: {COMPANY_INFO.phone}</span>
               </li>
               <li className="flex items-center gap-2">
+                <Phone className="w-4 h-4 text-slate-400 shrink-0" />
+                <span>Mobile: {COMPANY_INFO.mobiles.join(' / ')}</span>
+              </li>
+              <li className="flex items-center gap-2 font-mono">
+                <ShieldCheck className="w-4 h-4 text-slate-400 shrink-0" />
+                <span>GSTIN: {COMPANY_INFO.gstin}</span>
+              </li>
+              <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-slate-400 shrink-0" />
                 <span>Email: {COMPANY_INFO.email}</span>
               </li>

@@ -50,6 +50,9 @@ export default function Navbar({ activeTab, setActiveTab }) {
               <Star className="w-3 h-3 text-slate-300 fill-slate-300" />
               <span>{COMPANY_INFO.publicRating}</span>
             </div>
+            <div className="bg-slate-800 px-2.5 py-0.5 rounded-full border border-slate-700 text-slate-300 text-[11px] font-mono font-semibold">
+              GST: {COMPANY_INFO.gstin}
+            </div>
             <div className="flex items-center gap-1.5 text-slate-300">
               <MapPin className="w-3.5 h-3.5 text-slate-400" />
               <span className="truncate max-w-md">{COMPANY_INFO.primaryArea}</span>

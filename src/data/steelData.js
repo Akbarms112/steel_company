@@ -44,14 +44,15 @@ export const COMPANY_INFO = {
   tagline: "Quality Steel & Roofing Solutions for Your Construction Needs",
   subMessage: "Reliable steel and roofing materials for homes, businesses, contractors and industrial construction projects.",
   location: "Dharmapuri & Surrounding Areas, Tamil Nadu",
-  primaryArea: "Pulikarai / Dharmapuri, Tamil Nadu",
-  mappedLocation: "Sangampatti, Selliyampatti, Tamil Nadu 636809",
+  primaryArea: "Pulikarai / Palacode / Dharmapuri, Tamil Nadu",
+  mappedLocation: "Sanganampatti, Pulikarai-Po, Palacode-TK, Dharmapuri - 636808",
   publicRating: "4.7 / 5 (Verified Reviews)",
-  phone: "+91 98765 43210",
-  whatsapp: "919876543210",
-  mobiles: ["+91 98765 43210", "+91 98424 25147"],
+  phone: "+91 80567 80664",
+  whatsapp: "918056780664",
+  mobiles: ["+91 80567 80664", "+91 93442 80443"],
+  gstin: "33FIXPM3243P1ZF",
   email: "enquiry@bagavansteels.com",
-  address: "643F+V62, Sangampatti, Selliyampatti, Dharmapuri District, Tamil Nadu - 636809",
+  address: "Sanganampatti, Pulikarai-Po, Palacode-TK, Dharmapuri - 636808",
   copyright: "COPYRIGHT (C) 2026 BAGAVAN STEELS. ALL RIGHTS RESERVED.",
   description: "Bagavan Steels is a premier steel and roofing materials supplier serving Dharmapuri and nearby regions in Tamil Nadu. We specialize in Jindal Trapezoidal PPGL Roofing Sheets, high-strength TMT Bars, MS Structural Steel, and fabrication materials.",
   aboutStory: "Bagavan Steels provides construction-focused steel and roofing solutions for homeowners, civil contractors, commercial builders, and fabricators. Our focus is on supplying dependable materials, helping customers select products suited to their exact structural requirements, and delivering competitive wholesale quotations with responsive local availability."
@@ -173,7 +174,7 @@ export const TRUST_ELEMENTS = [
   },
   {
     title: 'Local Availability',
-    desc: 'Prompt local supply and ready stock serving Dharmapuri, Pulikarai, Selliyampatti, and nearby regions.',
+    desc: 'Prompt local supply and ready stock serving Dharmapuri, Pulikarai, Palacode, and nearby regions.',
     icon: 'MapPin'
   },
   {
