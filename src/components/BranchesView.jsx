@@ -1,81 +1,140 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { BRANCHES } from '../data/steelData';
-import { MapPin, Phone, Building2, ChevronRight } from 'lucide-react';
-
-function FadeIn({ children, delay = 0, className = '' }) {
-  return (
-    <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] }} className={className}>
-      {children}
-    </motion.div>
-  );
-}
+import { COMPANY_INFO } from '../data/steelData';
+import { MapPin, Phone, Building2, ChevronRight, MessageSquare, Mail } from 'lucide-react';
 
 export default function BranchesView({ setActiveTab }) {
+  const openWhatsApp = () => {
+    const text = encodeURIComponent('Hi Bagavan Steels Mart, I would like to get directions or contact your facility.');
+    window.open(`https://wa.me/${COMPANY_INFO.whatsapp}?text=${text}`, '_blank');
+  };
+
   return (
     <div className="bg-white">
-      {/* Header */}
-      <section className="bg-gray-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-          <FadeIn>
-            <div className="flex items-center justify-center gap-3 text-gray-400 text-xs font-bold uppercase tracking-widest">
-              <div className="w-8 h-0.5 bg-gray-600" /> Distribution Network <div className="w-8 h-0.5 bg-gray-600" />
-            </div>
-            <h1 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tight font-heading mt-3">
-              OUR BRANCHES IN <span className="text-gradient-gold">TAMIL NADU</span>
-            </h1>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-2xl mx-auto mt-2">
-              We have branches established all around Tamil Nadu ensuring fast, reliable delivery of steel rods, cement, and construction materials.
-            </p>
-          </FadeIn>
+
+      {/* ── Page Header ── */}
+      <section className="relative py-20 text-white overflow-hidden bg-slate-950 border-b border-slate-800">
+        <div className="max-w-4xl mx-auto px-4 space-y-4 relative z-10 text-center">
+          <span className="section-label bg-white/10 border-white/20 text-white text-xs">
+            Distribution Network
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-black uppercase tracking-tight font-heading">
+            OUR FACILITY IN <span className="text-gradient-metallic">DHARMAPURI</span>
+          </h1>
+          <p className="text-slate-300 text-base max-w-xl mx-auto">
+            Prime facility located at Pulkarai on Dharmapuri Main Road — ensuring fast, reliable supply of steel and roofing materials.
+          </p>
         </div>
+        <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-white/5 pointer-events-none" />
+        <div className="absolute -left-10 -bottom-20 w-60 h-60 rounded-full bg-white/5 pointer-events-none" />
       </section>
 
-      {/* Branches Grid */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {BRANCHES.map((branch, idx) => (
-              <FadeIn key={idx} delay={(idx % 3) * 0.07}>
-                <div className={`rounded-2xl p-6 border transition-all space-y-4 shadow-sm card-hover ${
-                  idx === 0
-                    ? 'bg-gray-900 border-gray-700 shadow-gray-300'
-                    : 'bg-white border-gray-100 hover:border-gray-900 hover:shadow-lg'
-                }`}>
-                  <div className="flex items-center justify-between">
-                    <span className={`text-[11px] font-extrabold uppercase px-2.5 py-1 rounded-full border ${
-                      idx === 0 ? 'bg-white/10 text-gray-200 border-white/20' : 'bg-gray-100 text-gray-600 border-gray-200'
-                    }`}>{branch.status}</span>
-                    <span className={`text-xs font-mono ${idx === 0 ? 'text-gray-500' : 'text-gray-400'}`}>Branch #{idx + 1}</span>
+      {/* ── Branches Grid ── */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+
+          {COMPANY_INFO.branches.map((branch, idx) => (
+            <motion.div
+              key={branch.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.12, duration: 0.55 }}
+              className="card-flat p-0 overflow-hidden"
+            >
+              <div className="flex flex-col md:flex-row">
+                {/* Branch number */}
+                <div className="md:w-1/4 p-8 flex flex-col items-center justify-center text-white text-center bg-slate-900 border-r border-slate-800">
+                  <Building2 className="w-10 h-10 text-blue-200 mb-3" />
+                  <p className="text-2xl font-black font-heading">HQ</p>
+                  <p className="text-blue-200 font-bold text-sm mt-1">Main Facility</p>
+                  <span className="mt-3 bg-white/10 border border-white/20 text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                    {branch.label}
+                  </span>
+                </div>
+
+                {/* Branch details */}
+                <div className="md:w-3/4 p-8 space-y-5">
+                  <h2 className="text-2xl font-black text-slate-900 font-heading">
+                    {COMPANY_INFO.fullName}
+                  </h2>
+
+                  <div className="flex items-start gap-3 p-4 rounded-xl bg-blue-50 border border-blue-100">
+                    <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-xs font-bold text-blue-700 uppercase tracking-wider mb-1">Address</p>
+                      <p className="text-slate-800 font-semibold text-sm leading-relaxed">{branch.address}</p>
+                    </div>
                   </div>
 
-                  <div>
-                    <h3 className={`text-xl font-bold flex items-center gap-2 ${idx === 0 ? 'text-white' : 'text-gray-900'}`}>
-                      <Building2 className={`w-5 h-5 shrink-0 ${idx === 0 ? 'text-gray-300' : 'text-gray-500'}`} />
-                      {branch.name}
-                    </h3>
-                    <p className={`text-xs mt-2 flex items-start gap-1.5 leading-relaxed ${idx === 0 ? 'text-gray-400' : 'text-gray-500'}`}>
-                      <MapPin className={`w-4 h-4 shrink-0 mt-0.5 ${idx === 0 ? 'text-gray-500' : 'text-gray-400'}`} />
-                      {branch.address}
-                    </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <a href={`tel:${branch.phone}`}
+                       className="flex items-center gap-3 p-3.5 rounded-xl bg-white border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white transition-all group">
+                      <Phone className="w-5 h-5 shrink-0" />
+                      <div>
+                        <p className="text-[10px] font-bold uppercase tracking-wider opacity-70">Primary Phone</p>
+                        <p className="font-bold text-sm">{branch.phone}</p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform" />
+                    </a>
+                    <a href={`tel:${branch.phone2}`}
+                       className="flex items-center gap-3 p-3.5 rounded-xl bg-white border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white transition-all group">
+                      <Phone className="w-5 h-5 shrink-0" />
+                      <div>
+                        <p className="text-[10px] font-bold uppercase tracking-wider opacity-70">Alternate Phone</p>
+                        <p className="font-bold text-sm">{branch.phone2}</p>
+                      </div>
+                      <ChevronRight className="w-4 h-4 ml-auto group-hover:translate-x-1 transition-transform" />
+                    </a>
                   </div>
 
-                  <div className={`pt-3 border-t flex items-center justify-between text-xs ${idx === 0 ? 'border-white/10' : 'border-gray-100'}`}>
-                    <span className={`flex items-center gap-1.5 font-bold ${idx === 0 ? 'text-gray-300' : 'text-gray-700'}`}>
-                      <Phone className={`w-3.5 h-3.5 ${idx === 0 ? 'text-gray-500' : 'text-gray-400'}`} />
-                      {branch.phone}
-                    </span>
+                  <div className="flex flex-wrap gap-3 pt-2">
                     <button
                       onClick={() => setActiveTab('contact')}
-                      className={`font-bold flex items-center gap-1 hover:underline ${idx === 0 ? 'text-gray-300 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+                      className="btn-primary text-sm"
                     >
-                      Contact <ChevronRight className="w-3.5 h-3.5" />
+                      Request Quotation
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                    <button
+                      onClick={openWhatsApp}
+                      className="btn-outline-blue text-sm"
+                    >
+                      <MessageSquare className="w-4 h-4" />
+                      WhatsApp Us
                     </button>
                   </div>
                 </div>
-              </FadeIn>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
+
+          {/* Common info card */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.25, duration: 0.5 }}
+            className="rounded-2xl p-8 text-white text-center bg-slate-950 border border-slate-800"
+          >
+            <h3 className="text-xl font-black font-heading uppercase mb-4">General Contact</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+              <div>
+                <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Email</p>
+                <a href={`mailto:${COMPANY_INFO.email}`} className="font-semibold hover:underline">
+                  {COMPANY_INFO.email}
+                </a>
+              </div>
+              <div>
+                <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">GSTIN</p>
+                <p className="font-mono font-semibold">{COMPANY_INFO.gstin}</p>
+              </div>
+              <div>
+                <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Rating</p>
+                <p className="font-semibold">4.7 / 5 ⭐ Verified</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
     </div>

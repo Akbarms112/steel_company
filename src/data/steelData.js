@@ -19,12 +19,15 @@ import structSteel2 from '../img/structure_steel2.jpeg';
 
 import roofingStacked from '../img/roofing.png';
 import jindalSabrang from '../img/jindal-sabrang-roofing-sheet-640x640.png';
+import jindalCutout from '../img/jindal-roofing-cutout.png';
 
 export const STEEL_IMAGES = {
   hero: roofingStacked,
-  banner: jindalSabrang,
-  roofingJindal: jindalSabrang,
+  banner: jindalCutout,
+  roofingJindal: jindalCutout,
+  jindalCutout: jindalCutout,
   roofingSheetsStacked: roofingStacked,
+  roofingSteel1: roofingSteel1,
   roofingSteel2: roofingSteel2,
   roofingSteel3: roofingSteel3,
   tmtRods: steel3,
@@ -37,32 +40,44 @@ export const STEEL_IMAGES = {
   structuralAlt: img1,
   sheetsAlt: img2,
   inventory: img3,
+  sheet1: sheet1,
+  sheet2: sheet2,
 };
 
 export const COMPANY_INFO = {
-  name: "BAGAVAN STEELS",
+  name: "BAGAVAN STEELS MART",
+  fullName: "BAGAVAN STEELS MART & ROOFING COMPANY",
   tagline: "Quality Steel & Roofing Solutions for Your Construction Needs",
   subMessage: "Reliable steel and roofing materials for homes, businesses, contractors and industrial construction projects.",
   location: "Dharmapuri & Surrounding Areas, Tamil Nadu",
-  primaryArea: "Pulikarai / Palacode / Dharmapuri, Tamil Nadu",
-  mappedLocation: "Sanganampatti, Pulikarai-Po, Palacode-TK, Dharmapuri - 636808",
+  primaryArea: "Pulkarai, Dharmapuri, Tamil Nadu",
   publicRating: "4.7 / 5 (Verified Reviews)",
   phone: "+91 80567 80664",
   whatsapp: "918056780664",
-  mobiles: ["+91 80567 80664", "+91 93442 80443"],
+  mobiles: ["+91 80567 80664", "+91 93442 80443", "+91 88831 21935"],
   gstin: "33FIXPM3243P1ZF",
   email: "enquiry@bagavansteels.com",
-  address: "Sanganampatti, Pulikarai-Po, Palacode-TK, Dharmapuri - 636808",
-  copyright: "COPYRIGHT (C) 2026 BAGAVAN STEELS. ALL RIGHTS RESERVED.",
-  description: "Bagavan Steels is a premier steel and roofing materials supplier serving Dharmapuri and nearby regions in Tamil Nadu. We specialize in Jindal Trapezoidal PPGL Roofing Sheets, high-strength TMT Bars, MS Structural Steel, and fabrication materials.",
-  aboutStory: "Bagavan Steels provides construction-focused steel and roofing solutions for homeowners, civil contractors, commercial builders, and fabricators. Our focus is on supplying dependable materials, helping customers select products suited to their exact structural requirements, and delivering competitive wholesale quotations with responsive local availability."
+  // Main facility address
+  branches: [
+    {
+      id: 'branch1',
+      label: 'Main Facility',
+      address: "Dharmapuri Main Road, Pulkarai, Dharmapuri (DT)",
+      phone: "+91 80567 80664",
+      phone2: "+91 93442 80443",
+    }
+  ],
+  address: "Dharmapuri Main Road, Pulkarai, Dharmapuri (DT)",
+  copyright: "COPYRIGHT © 2026 BAGAVAN STEELS MART & ROOFING COMPANY. ALL RIGHTS RESERVED.",
+  description: "Bagavan Steels Mart is a premier steel and roofing materials supplier serving Dharmapuri and nearby regions in Tamil Nadu. We specialize in Jindal Trapezoidal PPGL Roofing Sheets, high-strength TMT Bars, MS Structural Steel, and fabrication materials.",
+  aboutStory: "Bagavan Steels Mart & Roofing Company provides construction-focused steel and roofing solutions for homeowners, civil contractors, commercial builders, and fabricators. Our focus is on supplying dependable materials, helping customers select products suited to their exact structural requirements, and delivering competitive wholesale quotations with responsive local availability."
 };
 
 export const VERIFIED_DEALERS = [
-  { id: 'jindal', name: 'Jindal Trapezoidal PPGL', title: 'Jindal Trapezoidal PPGL Sheets', badge: 'Verified Supplier', color: 'from-slate-700 to-slate-900' },
-  { id: 'tmt', name: 'TMT Reinforcement Bars', title: 'High Yield Strength TMT Bars', badge: 'Construction Grade', color: 'from-slate-700 to-slate-900' },
-  { id: 'ppgl', name: 'Color Coated PPGL Sheets', title: 'PPGL & GI Roofing Sheets', badge: 'ISO Weatherproof', color: 'from-slate-800 to-slate-900' },
-  { id: 'ms-steel', name: 'MS Structural Steel', title: 'MS Angles, Channels & Beams', badge: 'Industrial Stock', color: 'from-slate-800 to-slate-950' },
+  { id: 'jindal', name: 'Jindal Trapezoidal PPGL', title: 'Jindal Trapezoidal PPGL Sheets', badge: 'Verified Supplier' },
+  { id: 'tmt', name: 'TMT Reinforcement Bars', title: 'High Yield Strength TMT Bars', badge: 'Construction Grade' },
+  { id: 'ppgl', name: 'Color Coated PPGL Sheets', title: 'PPGL & GI Roofing Sheets', badge: 'ISO Weatherproof' },
+  { id: 'ms-steel', name: 'MS Structural Steel', title: 'MS Angles, Channels & Beams', badge: 'Industrial Stock' },
 ];
 
 export const PRODUCTS_CATALOG = [
@@ -174,7 +189,7 @@ export const TRUST_ELEMENTS = [
   },
   {
     title: 'Local Availability',
-    desc: 'Prompt local supply and ready stock serving Dharmapuri, Pulikarai, Palacode, and nearby regions.',
+    desc: 'Prompt local supply and ready stock serving Dharmapuri, Pulkarai, and nearby regions.',
     icon: 'MapPin'
   },
   {
@@ -198,4 +213,8 @@ export const GALLERY_ITEMS = [
   { id: 6, category: 'Roofing Sheets', title: 'Industrial Shed Roofing Installation', img: STEEL_IMAGES.roofingSteel2, badge: 'Industrial' },
   { id: 7, category: 'Structural Steel', title: 'Heavy Duty Metal Plates & Flats', img: STEEL_IMAGES.roofingSteel3, badge: 'Metal Plates' },
   { id: 8, category: 'Warehouse', title: 'Bagavan Steels Central Storage Yard', img: STEEL_IMAGES.warehouse, badge: 'Stockyard' },
+  { id: 9, category: 'Roofing Sheets', title: 'Colour Coated Roofing Sheets Stock', img: STEEL_IMAGES.roofingSteel1, badge: 'Colour Coated' },
+  { id: 10, category: 'Structural Steel', title: 'Steel Sheet Stock Inventory', img: STEEL_IMAGES.sheet1, badge: 'Steel Sheets' },
+  { id: 11, category: 'Structural Steel', title: 'Flat Steel Sections', img: STEEL_IMAGES.sheet2, badge: 'Flat Sections' },
+  { id: 12, category: 'Warehouse', title: 'Heavy Pipes Depot', img: STEEL_IMAGES.heavyPipes, badge: 'MS Pipes' },
 ];
