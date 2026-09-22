@@ -37,19 +37,19 @@ export default function Navbar({ activeTab, setActiveTab }) {
         {/* Logo + Brand */}
         <button
           onClick={() => handleNavClick('home')}
-          className="flex items-center gap-2.5 focus:outline-none group shrink-0"
+          className="flex items-center gap-3 focus:outline-none group shrink-0"
         >
           <img
             src="/steel_company/logo.png"
             alt="Bagavan Steel Mart Logo"
-            className="h-14 sm:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+            className="h-14 sm:h-16 w-auto object-contain scale-x-[1.06] group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
           />
           <div className="hidden sm:block text-left">
-            <div className="text-lg font-bold tracking-tight text-slate-900 font-heading leading-tight">
+            <div className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 font-heading leading-tight">
               Bagavan Steels Mart
             </div>
-            <p className="text-[10.5px] text-slate-500 font-medium flex items-center gap-1.5">
-              <span className="font-semibold text-blue-700">Founder: {COMPANY_INFO.founder}</span>
+            <p className="text-xs text-slate-500 font-medium flex items-center gap-1.5 mt-0.5">
+              <span className="font-bold text-blue-700">Founder: {COMPANY_INFO.founder}</span>
               <span>·</span>
               <span>Roofing & Industrial Steel · Dharmapuri</span>
             </p>
@@ -57,20 +57,28 @@ export default function Navbar({ activeTab, setActiveTab }) {
         </button>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex items-center gap-1 xl:gap-2 flex-nowrap shrink-0">
+        <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 flex-nowrap shrink-0">
           {navItems.map((item) => {
             const isActive = activeTab === item.id;
             return (
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative px-3.5 py-1.5 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 transition-all duration-200 ${
+                className={`group relative px-3.5 py-2 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 transition-all duration-200 ${
                   isActive
-                    ? 'text-blue-700 bg-blue-500/10 border-b-2 border-blue-600'
-                    : 'text-slate-700 hover:text-blue-700 hover:bg-slate-200/60'
+                    ? 'text-blue-700 bg-blue-50/80 font-bold'
+                    : 'text-slate-700 hover:text-blue-600 hover:bg-white/80'
                 }`}
               >
-                {item.label}
+                <span>{item.label}</span>
+                {/* Animated active & hover bottom accent indicator */}
+                <span
+                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2.5px] rounded-full transition-all duration-300 ${
+                    isActive
+                      ? 'w-7 bg-blue-600 shadow-sm shadow-blue-500/50'
+                      : 'w-0 bg-blue-500 group-hover:w-7'
+                  }`}
+                />
               </button>
             );
           })}
@@ -80,15 +88,15 @@ export default function Navbar({ activeTab, setActiveTab }) {
         <div className="hidden sm:flex items-center gap-2.5 shrink-0">
           <a
             href={`tel:${COMPANY_INFO.mobiles[0]}`}
-            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-700 hover:text-blue-700 text-xs font-semibold hover:bg-slate-200/80 transition-colors"
+            className="hidden lg:flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-slate-700 hover:text-blue-700 text-xs font-semibold hover:bg-white/80 transition-all"
           >
-            <Phone className="w-3.5 h-3.5 text-blue-600" />
+            <Phone className="w-3.5 h-3.5 text-blue-600 transition-transform group-hover:rotate-12" />
             <span>{COMPANY_INFO.mobiles[0]}</span>
           </a>
 
           <button
             onClick={openWhatsApp}
-            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-xs font-bold transition-all duration-200 shadow-sm"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-xs font-bold transition-all duration-200 shadow-sm hover:shadow-md hover:shadow-emerald-600/20 hover:-translate-y-0.5 active:translate-y-0"
           >
             <MessageSquare className="w-3.5 h-3.5" />
             <span>WhatsApp</span>
@@ -96,10 +104,10 @@ export default function Navbar({ activeTab, setActiveTab }) {
 
           <button
             onClick={() => handleNavClick('contact')}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-white text-xs font-bold transition-all duration-200 shadow-md bg-blue-600 hover:bg-blue-700 shadow-blue-600/20"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-white text-xs font-bold transition-all duration-200 shadow-md bg-blue-600 hover:bg-blue-700 shadow-blue-600/20 hover:shadow-lg hover:shadow-blue-600/30 hover:-translate-y-0.5 active:translate-y-0"
           >
             <span>Get Quote</span>
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </button>
         </div>
 
