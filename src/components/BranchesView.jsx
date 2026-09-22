@@ -162,29 +162,15 @@ export default function BranchesView({ setActiveTab }) {
                 aria-hidden="true"
               />
               
-              {/* Overlay link: clicking or touching anywhere opens Google Maps */}
+              {/* Invisible overlay: clicking or touching anywhere opens Google Maps */}
               <a
                 href="https://www.google.com/maps/search/?api=1&query=Pulkarai+Dharmapuri+Main+Road+Dharmapuri+Tamil+Nadu"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Click anywhere on the map to open in Google Maps"
+                title="Open in Google Maps"
                 aria-label="Open Bagavan Steels Mart in Google Maps"
-                className="absolute inset-0 z-20 cursor-pointer flex flex-col items-center justify-between p-4 sm:p-6 bg-slate-950/0 hover:bg-slate-950/15 active:bg-slate-950/25 transition-all"
-              >
-                {/* Floating pill badge on top right */}
-                <div className="self-end bg-slate-900/90 hover:bg-slate-900 text-white px-3.5 py-1.5 rounded-full text-xs font-semibold shadow-lg border border-white/20 backdrop-blur-sm flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span>Tap anywhere to open</span>
-                </div>
-
-                {/* Central prompt on hover / touch */}
-                <div className="bg-slate-900/90 text-white px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold shadow-2xl border border-white/20 backdrop-blur-md flex items-center gap-2 transform group-hover:scale-105 transition-all duration-300">
-                  <MapPin className="w-4 h-4 text-rose-400 animate-bounce" />
-                  <span>Click / Tap anywhere to open in Google Maps</span>
-                </div>
-
-                <div className="h-4"></div>
-              </a>
+                className="absolute inset-0 z-20 cursor-pointer bg-transparent"
+              />
             </div>
           </motion.div>
 
