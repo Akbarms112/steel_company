@@ -183,20 +183,20 @@ export default function BranchesView({ setActiveTab }) {
             className="rounded-2xl p-8 text-white text-center bg-slate-950 border border-slate-800"
           >
             <h3 className="text-xl font-bold font-heading mb-4">General Contact & Business Info</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-sm">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
               <div>
                 <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Company</p>
                 <p className="font-semibold text-white">Bagavan Steels Mart</p>
+              </div>
+              <div>
+                <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Founder</p>
+                <p className="font-semibold text-white">Mr. {COMPANY_INFO.founder}</p>
               </div>
               <div>
                 <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Email</p>
                 <a href={`mailto:${COMPANY_INFO.email}`} className="font-semibold hover:underline">
                   {COMPANY_INFO.email}
                 </a>
-              </div>
-              <div>
-                <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">GSTIN</p>
-                <p className="font-mono font-semibold">{COMPANY_INFO.gstin}</p>
               </div>
               <div>
                 <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Rating</p>

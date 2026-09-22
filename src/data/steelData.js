@@ -61,9 +61,8 @@ export const COMPANY_INFO = {
   phone: "+91 80567 80664",
   whatsapp: "918056780664",
   mobiles: ["+91 80567 80664", "+91 93442 80443", "+91 88831 21935"],
-  founder: "",
-  owner: "",
-  gstin: "33FIXPM3243P1ZF",
+  founder: "Bagavan",
+  owner: "Mr. Bagavan",
   email: "enquiry@bagavansteels.com",
   // Main facility address
   branches: [
@@ -77,8 +76,8 @@ export const COMPANY_INFO = {
   ],
   address: "Dharmapuri Main Road, Pulkarai, Dharmapuri (DT)",
   copyright: "COPYRIGHT © 2026 BAGAVAN STEELS MART & ROOFING COMPANY. ALL RIGHTS RESERVED.",
-  description: "Bagavan Steels Mart is a premier steel and roofing materials supplier serving Dharmapuri and nearby regions in Tamil Nadu. We specialize in JSW Trapezoidal PPGL Roofing Sheets, high-strength TMT Bars, MS Structural Steel, and fabrication materials.",
-  aboutStory: "Bagavan Steels Mart & Roofing Company provides construction-focused steel and roofing solutions for homeowners, civil contractors, commercial builders, and fabricators. Our focus is on supplying dependable materials, helping customers select products suited to their exact structural requirements, and delivering competitive wholesale quotations with responsive local availability."
+  description: "Bagavan Steels Mart is a premier steel and roofing materials supplier serving Dharmapuri and nearby regions in Tamil Nadu. Founded by Mr. Bagavan, we specialize in JSW Trapezoidal PPGL Roofing Sheets, high-strength TMT Bars, MS Structural Steel, and fabrication materials.",
+  aboutStory: "Founded and guided by Mr. Bagavan, Bagavan Steels Mart & Roofing Company provides construction-focused steel and roofing solutions for homeowners, civil contractors, commercial builders, and fabricators. Under Mr. Bagavan's leadership, our focus is on supplying dependable materials, helping customers select products suited to their exact structural requirements, and delivering competitive wholesale quotations with responsive local availability."
 };
 
 export const VERIFIED_DEALERS = [

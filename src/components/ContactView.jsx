@@ -291,12 +291,12 @@ export default function ContactView() {
               <div className="space-y-2 text-sm text-slate-300">
                 <p className="font-bold text-white">{COMPANY_INFO.fullName}</p>
                 <p className="flex items-center justify-between">
-                  <span>Location:</span>
-                  <span className="font-bold text-sky-400">Pulikarai, Dharmapuri</span>
+                  <span>Founder:</span>
+                  <span className="font-bold text-white">Mr. {COMPANY_INFO.founder}</span>
                 </p>
                 <p className="flex items-center justify-between">
-                  <span>GSTIN:</span>
-                  <span className="font-mono text-blue-300">{COMPANY_INFO.gstin}</span>
+                  <span>Location:</span>
+                  <span className="font-bold text-sky-400">Pulikarai, Dharmapuri</span>
                 </p>
                 <p className="flex items-center justify-between">
                   <span>Rating:</span>

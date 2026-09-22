@@ -131,9 +131,6 @@ export default function Footer({ setActiveTab }) {
                   </div>
                 </div>
               ))}
-              <p className="text-xs text-slate-400 pl-0">
-                <span className="font-mono text-blue-400">GST:</span> {COMPANY_INFO.gstin}
-              </p>
             </div>
           </div>
 
