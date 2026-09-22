@@ -42,7 +42,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
           <img
             src="/steel_company/logo.png"
             alt="Bagavan Steel Mart Logo"
-            className="h-11 sm:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
+            className="h-14 sm:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm"
           />
           <div className="hidden sm:block text-left">
             <div className="text-lg font-bold tracking-tight text-slate-900 font-heading leading-tight">
