@@ -54,7 +54,7 @@ export default function AboutView({ setActiveTab }) {
                   Verified Product Association
                 </p>
                 <p className="text-sm font-bold text-slate-900 mt-1">
-                  Jindal Trapezoidal PPGL Roofing Sheets
+                  JSW Trapezoidal PPGL Roofing Sheets
                 </p>
               </div>
             </div>
@@ -91,15 +91,15 @@ export default function AboutView({ setActiveTab }) {
               {COMPANY_INFO.aboutStory}
             </p>
 
-            {/* Leadership Spotlight Card */}
+            {/* Multi-Brand Sourcing Spotlight Card */}
             <div className="flex items-center gap-4 p-5 rounded-2xl bg-gradient-to-r from-blue-50/90 to-slate-100 border border-blue-100 shadow-sm">
               <div className="w-13 h-13 rounded-xl bg-blue-700 text-white flex items-center justify-center font-bold text-xl font-heading shadow-md shadow-blue-700/20 shrink-0">
-                B
+                BS
               </div>
               <div className="flex-1 min-w-0">
-                <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider">Company Leadership</span>
-                <h3 className="text-lg font-bold text-slate-900 leading-tight">Mr. {COMPANY_INFO.founder}</h3>
-                <p className="text-xs text-slate-600 mt-0.5">Founder & Head · Direct Customer Support & Mill Wholesale Orders</p>
+                <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider">Commercial Depot</span>
+                <h3 className="text-lg font-bold text-slate-900 leading-tight">Bagavan Steels Mart</h3>
+                <p className="text-xs text-slate-600 mt-0.5">Wholesale & Retail Supply · Direct Customer Support & Mill Orders</p>
               </div>
             </div>
 
@@ -187,9 +187,9 @@ export default function AboutView({ setActiveTab }) {
         <div className="rounded-2xl p-8 text-white bg-slate-950 border border-slate-800">
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
             <div className="pt-4 sm:pt-0">
-              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Founder</p>
-              <p className="text-2xl font-bold font-heading text-white mt-1">{COMPANY_INFO.founder}</p>
-              <p className="text-blue-300 text-xs mt-0.5">Founder & Head</p>
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Industry</p>
+              <p className="text-2xl font-bold font-heading text-white mt-1">Steel & Roofing</p>
+              <p className="text-blue-300 text-xs mt-0.5">Multi-Brand Hub</p>
             </div>
             <div className="pt-4 sm:pt-0">
               <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">GSTIN</p>
@@ -203,7 +203,7 @@ export default function AboutView({ setActiveTab }) {
             </div>
             <div className="pt-4 sm:pt-0">
               <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Distributor</p>
-              <p className="text-2xl font-bold font-heading text-white mt-1">Jindal</p>
+              <p className="text-2xl font-bold font-heading text-white mt-1">JSW Steel</p>
               <p className="text-blue-200 text-xs mt-0.5">PPGL Roofing Sheets</p>
             </div>
           </div>

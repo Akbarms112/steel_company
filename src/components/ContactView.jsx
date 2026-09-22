@@ -7,7 +7,7 @@ export default function ContactView() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    product: 'Jindal Trapezoidal PPGL Roofing Sheets',
+    product: 'JSW Trapezoidal PPGL Roofing Sheets',
     quantity: '1000 sq.ft',
     location: 'Dharmapuri',
     requirement: 'Roofing sheet requirement',
@@ -285,8 +285,8 @@ export default function ContactView() {
               <div className="space-y-2 text-sm text-slate-300">
                 <p className="font-bold text-white">{COMPANY_INFO.fullName}</p>
                 <p className="flex items-center justify-between">
-                  <span>Founder:</span>
-                  <span className="font-bold text-sky-400">{COMPANY_INFO.founder}</span>
+                  <span>Location:</span>
+                  <span className="font-bold text-sky-400">Pulikarai, Dharmapuri</span>
                 </p>
                 <p className="flex items-center justify-between">
                   <span>GSTIN:</span>

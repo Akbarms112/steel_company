@@ -7,7 +7,7 @@ export default function QuoteView() {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    product: 'Jindal Trapezoidal PPGL Roofing Sheets',
+    product: 'JSW Trapezoidal PPGL Roofing Sheets',
     quantity: '1000 sq.ft',
     location: 'Dharmapuri',
     requirement: 'Industrial shed roofing requirement',
@@ -136,11 +136,19 @@ export default function QuoteView() {
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-slate-900 focus:ring-2 focus:ring-slate-200 text-sm transition-all"
                   >
-                    <option value="Jindal Trapezoidal PPGL Roofing Sheets">Jindal Trapezoidal PPGL Roofing Sheets</option>
-                    <option value="TMT / Reinforcement Steel Bars">TMT / Reinforcement Steel Bars</option>
-                    <option value="MS Angles, Channels & Beams">MS Angles, Channels & Beams</option>
-                    <option value="MS Square / Round Steel Pipes">MS Square / Round Steel Pipes</option>
-                    <option value="GI / Colour-Coated Sheets">GI / Colour-Coated Sheets</option>
+                    <optgroup label="Tata Steel Products">
+                      <option value="Tata Tiscon 550SD TMT Bars">Tata Tiscon 550SD TMT Bars</option>
+                      <option value="Tata Shaktee Galvano / Roofing Sheets">Tata Shaktee Galvano / Roofing Sheets</option>
+                      <option value="Tata Structura / Tata Pipes">Tata Structura / Tata Pipes</option>
+                      <option value="Tata Wiron Fencing & Binding Wire">Tata Wiron Fencing & Binding Wire</option>
+                    </optgroup>
+                    <optgroup label="Roofing & Fabricated Steel">
+                      <option value="JSW Trapezoidal PPGL Roofing Sheets">JSW Trapezoidal PPGL Roofing Sheets</option>
+                      <option value="PPGL & GI Colour-Coated Sheets">PPGL & GI Colour-Coated Sheets</option>
+                      <option value="MS Angles, Channels & Beams">MS Angles, Channels & Beams</option>
+                      <option value="MS Square / Round Steel Pipes">MS Square / Round Steel Pipes</option>
+                      <option value="High-Strength TMT Reinforcement Rods">High-Strength TMT Reinforcement Rods</option>
+                    </optgroup>
                   </select>
                 </div>
 

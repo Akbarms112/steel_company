@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence, useInView } from 'framer-motion';
 import {
-  COMPANY_INFO, STEEL_IMAGES, VERIFIED_DEALERS, PRODUCTS_CATALOG, TRUST_ELEMENTS
+  COMPANY_INFO, STEEL_IMAGES, VERIFIED_DEALERS, PRODUCTS_CATALOG, TRUST_ELEMENTS, TATA_STEEL_INFO
 } from '../data/steelData';
 import {
   ChevronRight, CheckCircle2, MessageSquare, ArrowRight,
-  Phone, Star, Award, Check, ShieldCheck
+  Phone, Star, Award, Check, ShieldCheck, AlertTriangle, Sparkles
 } from 'lucide-react';
 
 
@@ -68,8 +68,15 @@ function Counter({ end, suffix = '' }) {
 
 const heroSlides = [
   {
-    img: STEEL_IMAGES.roofingJindal,
-    label: 'Verified Jindal Supplier',
+    img: STEEL_IMAGES.tataTiscon,
+    label: 'Core Tata Steel Range',
+    title: 'Tata Tiscon, Shaktee',
+    highlight: '& Structura Products',
+    sub: 'High-strength Tata Tiscon 550SD rebars, Shaktee Galvano roofing sheets & Structura pipes sourced based on local market demand.',
+  },
+  {
+    img: STEEL_IMAGES.roofingJsw,
+    label: 'Verified JSW Supplier',
     title: 'Quality Steel &',
     highlight: 'Roofing Solutions',
     sub: 'Reliable steel and roofing materials for homes, businesses, civil contractors and industrial projects in Dharmapuri.',
@@ -77,7 +84,7 @@ const heroSlides = [
   {
     img: STEEL_IMAGES.hero,
     label: 'Trapezoidal PPGL Sheets',
-    title: 'Jindal Trapezoidal',
+    title: 'JSW Trapezoidal',
     highlight: 'PPGL Roofing Sheets',
     sub: 'ISO certified weather-resistant colour coated PPGL roofing sheets for sheds, warehouses and residential homes.',
   },
@@ -588,21 +595,21 @@ function AboutSection({ setActiveTab }) {
               <div className="absolute top-4 right-4 z-20">
                 <span className="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-slate-700 flex items-center gap-1.5 shadow-md">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-500 inline-block" />
-                  Original Jindal PPGL
+                  Original JSW PPGL
                 </span>
               </div>
 
               {/* 4th Pic Cutout */}
               <img
-                src={STEEL_IMAGES.jindalCutout}
-                alt="Jindal Sabrang PPGL Roofing Sheet"
+                src={STEEL_IMAGES.jswCutout || STEEL_IMAGES.banner}
+                alt="JSW Trapezoidal PPGL Roofing Sheet"
                 className="w-full h-full object-contain filter drop-shadow-[0_25px_35px_rgba(0,0,0,0.25)] group-hover:scale-105 transition-all duration-700 ease-out relative z-10"
               />
 
               {/* Hover overlay with details (Pic 3 style) */}
               <div className="absolute inset-0 bg-slate-950/85 backdrop-blur-[3px] p-8 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 z-20">
                 <span className="text-red-400 text-xs font-bold uppercase tracking-wider">Verified Material Supply</span>
-                <h3 className="text-2xl font-black text-white font-heading mt-1">Jindal Trapezoidal PPGL Sheets</h3>
+                <h3 className="text-2xl font-black text-white font-heading mt-1">JSW Trapezoidal PPGL Sheets</h3>
                 <div className="w-14 h-1 bg-red-600 rounded-full my-3" />
                 <p className="text-slate-300 text-xs leading-relaxed max-w-sm mb-3">
                   Corrosion-resistant, high tensile strength colour-coated sheets engineered for extreme weather and long-lasting commercial and residential roofing.
@@ -670,12 +677,12 @@ function AboutSection({ setActiveTab }) {
               </p>
             </div>
 
-            {/* Facility & Founder Info */}
+            {/* Facility & Service Info */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 rounded-xl bg-slate-200/90 border border-slate-300">
-                <p className="text-[10px] font-bold text-blue-700 uppercase tracking-wider mb-1">Founder & Leadership</p>
-                <p className="text-sm font-bold text-slate-900 leading-snug">Mr. {COMPANY_INFO.founder}</p>
-                <p className="text-xs text-slate-600 mt-0.5">Managing Operations & Wholesale Supply</p>
+                <p className="text-[10px] font-bold text-blue-700 uppercase tracking-wider mb-1">Commercial Supply</p>
+                <p className="text-sm font-bold text-slate-900 leading-snug">Wholesale & Retail Depot</p>
+                <p className="text-xs text-slate-600 mt-0.5">Direct Mill Distribution & Site Dispatch</p>
               </div>
               {COMPANY_INFO.branches.map((b) => (
                 <div key={b.id} className="p-4 rounded-xl bg-slate-200/90 border border-slate-300">
@@ -704,7 +711,11 @@ function AboutSection({ setActiveTab }) {
 
 function BrandTicker() {
   const items = [
-    'Jindal Trapezoidal PPGL',
+    'Tata Tiscon 550SD TMT',
+    'JSW Trapezoidal PPGL',
+    'Tata Shaktee Galvano Sheets',
+    'Tata Structura Pipes',
+    'Tata Wiron Fencing Wire',
     'TMT Reinforcement Bars',
     'PPGL & GI Roofing Sheets',
     'MS Structural Steel',
@@ -717,7 +728,7 @@ function BrandTicker() {
     <div className="bg-slate-800 border-y border-slate-700 py-4 overflow-hidden">
       <motion.div
         animate={{ x: ['0%', '-50%'] }}
-        transition={{ repeat: Infinity, duration: 22, ease: 'linear' }}
+        transition={{ repeat: Infinity, duration: 25, ease: 'linear' }}
         className="flex items-center gap-0 whitespace-nowrap"
       >
         {[...items, ...items].map((item, i) => (
@@ -733,11 +744,16 @@ function BrandTicker() {
 
 
 function ProductsSection({ setActiveTab }) {
+  // Show 4 representative products on home page covering core categories
+  const homeProducts = PRODUCTS_CATALOG.filter((p) =>
+    ['roofing-jsw', 'tata-tiscon-tmt', 'structural-steel', 'tata-structura-pipes'].includes(p.id)
+  ).slice(0, 4);
+
   return (
-    <section className="py-28 bg-light-pattern">
+    <section className="py-24 bg-light-pattern">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
 
-        <Reveal className="text-center mb-16">
+        <Reveal className="text-center mb-14">
           <span className="section-label">Verified Product Range</span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 font-heading leading-tight mt-4">
             Our Product <span className="text-gradient-blue">Categories</span>
@@ -749,8 +765,8 @@ function ProductsSection({ setActiveTab }) {
         </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {PRODUCTS_CATALOG.map((product, idx) => (
-            <Reveal key={product.id} delay={idx * 0.12} variant={scaleUp}>
+          {homeProducts.map((product, idx) => (
+            <Reveal key={product.id} delay={idx * 0.1} variant={scaleUp}>
               <div
                 onClick={() => setActiveTab('services')}
                 className="hover-showcase-card group cursor-pointer h-[470px] relative flex flex-col justify-end"
@@ -820,7 +836,7 @@ function ProductsSection({ setActiveTab }) {
                       onClick={(e) => { e.stopPropagation(); setActiveTab('services'); }}
                       className="flex-1 py-2.5 rounded-lg bg-red-600 hover:bg-red-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 transition-all shadow-md shadow-red-900/30"
                     >
-                      <span>Explore Category</span>
+                      <span>Explore</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                     <button
@@ -842,9 +858,20 @@ function ProductsSection({ setActiveTab }) {
           ))}
         </div>
 
+        {/* Direct link to view all products */}
         <Reveal className="text-center mt-12">
-          <button onClick={() => setActiveTab('services')} className="btn-outline-blue">
-            View All Products <ArrowRight className="w-4 h-4" />
+          <button
+            onClick={() => {
+              if (window.lenis) {
+                window.lenis.scrollTo(0, { immediate: true });
+              }
+              window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+              setActiveTab('services');
+            }}
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
+          >
+            <span>View All Products & Tata Steel Range</span>
+            <ArrowRight className="w-4 h-4" />
           </button>
         </Reveal>
       </div>
@@ -898,7 +925,7 @@ function WhyUsSection() {
 
 function GalleryPreview({ setActiveTab }) {
   const previews = [
-    { img: STEEL_IMAGES.banner,          label: 'Jindal PPGL Sheets', category: 'Roofing' },
+    { img: STEEL_IMAGES.banner,          label: 'JSW PPGL Sheets',    category: 'Roofing' },
     { img: STEEL_IMAGES.tmtRods,         label: 'TMT Steel Bars',      category: 'TMT Steel' },
     { img: STEEL_IMAGES.structuralMain,  label: 'MS Structural Steel',  category: 'Structural' },
     { img: STEEL_IMAGES.structuralPipes, label: 'MS Pipes & Tubes',     category: 'Pipes' },

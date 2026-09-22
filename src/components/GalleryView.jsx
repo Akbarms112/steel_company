@@ -71,7 +71,7 @@ export default function GalleryView({ setActiveTab }) {
               </span>
             </h1>
             <p className="text-white/65 mt-3 text-sm max-w-lg mx-auto">
-              Explore our Jindal PPGL roofing sheets, TMT steel rod bundles, structural sections, and warehouse stock.
+              Explore our JSW PPGL roofing sheets, TMT steel rod bundles, structural sections, and warehouse stock.
             </p>
           </motion.div>
         </div>

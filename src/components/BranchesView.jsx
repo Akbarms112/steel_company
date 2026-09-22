@@ -109,6 +109,50 @@ export default function BranchesView({ setActiveTab }) {
             </motion.div>
           ))}
 
+          {/* ── Interactive Google Map Location ── */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="card-flat p-0 overflow-hidden shadow-xl border border-slate-200"
+          >
+            <div className="p-6 bg-slate-900 text-white flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <span className="text-[11px] font-bold text-sky-400 uppercase tracking-wider flex items-center gap-1.5 mb-1">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Google Maps Location
+                </span>
+                <h3 className="text-xl font-bold font-heading">
+                  Bagavan Steels Mart — Main Yard & Facility
+                </h3>
+                <p className="text-xs text-slate-300 mt-1">
+                  Dharmapuri Main Road, Pulkarai, Dharmapuri (DT), Tamil Nadu
+                </p>
+              </div>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Pulkarai+Dharmapuri+Main+Road+Dharmapuri+Tamil+Nadu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary text-xs font-bold py-2.5 px-4 shrink-0 shadow-md inline-flex items-center gap-2"
+              >
+                <MapPin className="w-4 h-4" />
+                <span>Open in Google Maps</span>
+              </a>
+            </div>
+
+            <div className="relative w-full h-[380px] sm:h-[450px] bg-slate-100">
+              <iframe
+                title="Bagavan Steels Mart Google Map Location"
+                src="https://maps.google.com/maps?q=Pulkarai,+Dharmapuri+Main+Road,+Dharmapuri,+Tamil+Nadu&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+          </motion.div>
+
           {/* Common info card */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -120,8 +164,8 @@ export default function BranchesView({ setActiveTab }) {
             <h3 className="text-xl font-bold font-heading mb-4">General Contact & Business Info</h3>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-sm">
               <div>
-                <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Founder</p>
-                <p className="font-semibold text-white">{COMPANY_INFO.founder}</p>
+                <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Company</p>
+                <p className="font-semibold text-white">Bagavan Steels Mart</p>
               </div>
               <div>
                 <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Email</p>

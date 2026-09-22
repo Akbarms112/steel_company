@@ -15,9 +15,72 @@ import BranchesView from './components/BranchesView';
 import { ArrowUp, MessageSquare } from 'lucide-react';
 import { COMPANY_INFO } from './data/steelData';
 
+const TAB_TO_ROUTE = {
+  home: '',
+  services: 'products',
+  about: 'about',
+  customers: 'customers',
+  gallery: 'gallery',
+  branches: 'location',
+  contact: 'contact',
+  quote: 'quote',
+};
+
+const ROUTE_TO_TAB = {
+  '': 'home',
+  home: 'home',
+  products: 'services',
+  services: 'services',
+  about: 'about',
+  customers: 'customers',
+  gallery: 'gallery',
+  location: 'branches',
+  branches: 'branches',
+  contact: 'contact',
+  quote: 'quote',
+};
+
+const getTabFromUrl = () => {
+  if (typeof window === 'undefined') return 'home';
+  const hash = window.location.hash.replace(/^#[/]?/, '').toLowerCase().trim();
+  if (hash && ROUTE_TO_TAB[hash]) {
+    return ROUTE_TO_TAB[hash];
+  }
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  const lastPart = pathParts[pathParts.length - 1]?.toLowerCase();
+  if (lastPart && ROUTE_TO_TAB[lastPart]) {
+    return ROUTE_TO_TAB[lastPart];
+  }
+  return 'home';
+};
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState('home');
+  const [activeTab, setActiveTabState] = useState(getTabFromUrl);
   const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const setActiveTab = (tab) => {
+    setActiveTabState(tab);
+    const route = TAB_TO_ROUTE[tab] !== undefined ? TAB_TO_ROUTE[tab] : tab;
+    const newHash = route ? `#/${route}` : '#/';
+    if (window.location.hash !== newHash) {
+      window.history.pushState(null, '', newHash);
+    }
+  };
+
+  // Sync state when user uses browser back/forward or modifies URL hash
+  useEffect(() => {
+    const handleUrlChange = () => {
+      const tab = getTabFromUrl();
+      setActiveTabState(tab);
+    };
+
+    window.addEventListener('popstate', handleUrlChange);
+    window.addEventListener('hashchange', handleUrlChange);
+    return () => {
+      window.removeEventListener('popstate', handleUrlChange);
+      window.removeEventListener('hashchange', handleUrlChange);
+    };
+  }, []);
 
   const { scrollYProgress, scrollY } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
@@ -27,6 +90,25 @@ export default function App() {
       setShowScrollTop(latest > 250);
     });
   }, [scrollY]);
+
+  // Scroll to absolute top whenever activeTab changes
+  useEffect(() => {
+    const scrollToTopImmediate = () => {
+      if (window.lenis) {
+        window.lenis.scrollTo(0, { immediate: true });
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    };
+
+    scrollToTopImmediate();
+    // Re-verify after transition animation completes
+    const t1 = setTimeout(scrollToTopImmediate, 60);
+    const t2 = setTimeout(scrollToTopImmediate, 220);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+    };
+  }, [activeTab]);
 
   // Initialize Lenis for luxurious slow smooth scrolling
   useEffect(() => {

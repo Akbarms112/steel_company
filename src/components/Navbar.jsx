@@ -32,7 +32,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
   const navTiles = [
     { id: 'home',      label: 'Home',      desc: 'Overview & Steel',      icon: Home,      accent: 'text-blue-600 bg-blue-500/10' },
     { id: 'services',  label: 'Products',  desc: 'TMT & Roofing Sheets',  icon: Package,   accent: 'text-sky-600 bg-sky-500/10' },
-    { id: 'about',     label: 'About Us',  desc: 'Founder Bagavan',       icon: Building2, accent: 'text-indigo-600 bg-indigo-500/10' },
+    { id: 'about',     label: 'About Us',  desc: 'Company & Profile',     icon: Building2, accent: 'text-indigo-600 bg-indigo-500/10' },
     { id: 'customers', label: 'Customers', desc: 'Builders & Sheds',      icon: Users,     accent: 'text-amber-600 bg-amber-500/10' },
     { id: 'gallery',   label: 'Gallery',   desc: 'Live Yard & Sites',     icon: Image,     accent: 'text-emerald-600 bg-emerald-500/10' },
     { id: 'branches',  label: 'Location',  desc: 'Dharmapuri Main Rd',    icon: MapPin,    accent: 'text-rose-600 bg-rose-500/10' },
@@ -72,10 +72,9 @@ export default function Navbar({ activeTab, setActiveTab }) {
               Bagavan Steels Mart
             </div>
             <p className="text-[11px] sm:text-xs text-slate-500 font-medium flex items-center gap-1 sm:gap-1.5 mt-0.5 whitespace-nowrap overflow-hidden text-ellipsis">
-              <span className="font-bold text-blue-700">Founder: {COMPANY_INFO.founder}</span>
+              <span className="font-semibold text-blue-700">Roofing & Industrial Steel</span>
               <span className="text-slate-300">·</span>
-              <span className="hidden md:inline">Roofing & Industrial Steel · Dharmapuri</span>
-              <span className="inline md:hidden text-slate-500">Dharmapuri</span>
+              <span>Dharmapuri</span>
             </p>
           </div>
         </button>

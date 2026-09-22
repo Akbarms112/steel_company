@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { PRODUCTS_CATALOG, COMPANY_INFO } from '../data/steelData';
-import { CheckCircle2, ChevronRight, MessageSquare, ShieldCheck, ArrowRight, Filter } from 'lucide-react';
+import { PRODUCTS_CATALOG, COMPANY_INFO, TATA_STEEL_INFO } from '../data/steelData';
+import { CheckCircle2, ChevronRight, MessageSquare, ShieldCheck, ArrowRight, Filter, Phone, AlertTriangle, Sparkles, Building2 } from 'lucide-react';
 
 export default function ServicesView({ setActiveTab }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'Roofing Sheets', 'TMT Steel', 'Structural Steel', 'Pipes & Tubes'];
+  useEffect(() => {
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true });
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
+
+  const categories = ['All', 'Tata Steel Range', 'Roofing Sheets', 'TMT Steel', 'Structural Steel', 'Pipes & Tubes'];
 
   const filteredProducts = selectedCategory === 'All'
     ? PRODUCTS_CATALOG
-    : PRODUCTS_CATALOG.filter((p) => p.category === selectedCategory);
+    : PRODUCTS_CATALOG.filter((p) => 
+        p.category === selectedCategory || 
+        (Array.isArray(p.categories) && p.categories.includes(selectedCategory))
+      );
 
   const openWhatsApp = (productName) => {
-    const text = encodeURIComponent(`Hi Bagavan Steels Mart, I would like to inquire about price and stock for: ${productName}`);
+    const text = encodeURIComponent(`Hi Bagavan Steels Mart, I would like to inquire about price and stock availability for: ${productName}`);
     window.open(`https://wa.me/${COMPANY_INFO.whatsapp}?text=${text}`, '_blank');
   };
 
@@ -29,8 +39,8 @@ export default function ServicesView({ setActiveTab }) {
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-heading">
             Our <span className="text-gradient-metallic">Product Catalog</span>
           </h1>
-          <p className="text-slate-300 text-base max-w-xl mx-auto">
-            Jindal Trapezoidal PPGL Sheets, TMT Bars, MS Structural Sections, and Steel Pipes — quality assured, competitively priced.
+          <p className="text-slate-300 text-base max-w-2xl mx-auto">
+            JSW Trapezoidal PPGL Sheets, Core Tata Steel Products, TMT Rebars, MS Structural Sections, and Steel Pipes — quality assured & competitively priced.
           </p>
         </div>
         <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-white/5 pointer-events-none" />
@@ -63,84 +73,95 @@ export default function ServicesView({ setActiveTab }) {
 
       {/* ── Products Grid ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-slate-900 font-heading">
+            {selectedCategory === 'All' ? 'All Steel & Roofing Categories' : `${selectedCategory} Catalog`}
+          </h2>
+          <p className="text-sm text-slate-500 mt-1">
+            Browse our full range of inventory ready for retail pickup or direct site dispatch.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {filteredProducts.map((product, idx) => (
             <motion.div
               key={product.id}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: idx * 0.1 }}
+              transition={{ duration: 0.45, delay: idx * 0.08 }}
               className="card-flat overflow-hidden flex flex-col md:flex-row group"
             >
-              {/* Image */}
-              <div className="md:w-5/12 relative overflow-hidden bg-slate-100 aspect-[4/3] md:aspect-auto">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-600"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
-                <span className="absolute top-3 left-3 section-label text-xs">
-                  {product.category}
-                </span>
-                {product.verified && (
-                  <span className="absolute bottom-3 left-3 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <ShieldCheck className="w-3 h-3" /> Verified
+                {/* Image */}
+                <div className="md:w-5/12 relative overflow-hidden bg-slate-100 aspect-[4/3] md:aspect-auto">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-600"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent" />
+                  <span className="absolute top-3 left-3 section-label text-xs">
+                    {product.badge || product.category}
                   </span>
-                )}
-              </div>
-
-              {/* Content */}
-              <div className="md:w-7/12 p-6 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug">
-                    {product.name}
-                  </h3>
-                  <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                    {product.description}
-                  </p>
-
-                  <div className="mt-4 space-y-2">
-                    <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block">
-                      Stock Items & Specifications:
+                  {product.verified && (
+                    <span className="absolute bottom-3 left-3 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+                      <ShieldCheck className="w-3 h-3" /> Verified
                     </span>
-                    {product.items.map((item, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-slate-700">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 shrink-0" />
-                        <span className="font-medium">{item}</span>
-                      </div>
-                    ))}
+                  )}
+                </div>
+
+                {/* Content */}
+                <div className="md:w-7/12 p-6 flex flex-col justify-between space-y-4">
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-snug">
+                      {product.name}
+                    </h3>
+                    <p className="text-xs text-slate-500 mt-2 leading-relaxed">
+                      {product.description}
+                    </p>
+
+                    <div className="mt-4 space-y-2">
+                      <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block">
+                        Stock Items & Specifications:
+                      </span>
+                      {product.items.map((item, i) => (
+                        <div key={i} className="flex items-center gap-2 text-xs text-slate-700">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                          <span className="font-medium">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
+                    <button
+                      onClick={() => openWhatsApp(product.name)}
+                      className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-sm"
+                    >
+                      <MessageSquare className="w-3.5 h-3.5" />
+                      WhatsApp Quote
+                    </button>
+                    <button
+                      onClick={() => setActiveTab('contact')}
+                      className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-white text-xs font-bold transition-all shadow-sm bg-slate-900 hover:bg-slate-800"
+                    >
+                      Get Estimate
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
                   </div>
                 </div>
-
-                <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
-                  <button
-                    onClick={() => openWhatsApp(product.name)}
-                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-sm"
-                  >
-                    <MessageSquare className="w-3.5 h-3.5" />
-                    WhatsApp Quote
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('contact')}
-                    className="flex items-center gap-1.5 px-4 py-2 rounded-lg text-white text-xs font-bold transition-all shadow-sm bg-slate-900 hover:bg-slate-800"
-                  >
-                    Get Estimate
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        {/* CTA */}
-        <div className="mt-16 rounded-2xl p-8 text-white text-center bg-slate-950 border border-slate-800">
+      {/* ── Global Bottom Quotation & Stock CTA ── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="rounded-2xl p-8 text-white text-center bg-slate-950 border border-slate-800">
           <h3 className="text-2xl font-black font-heading uppercase">
-            Need a Custom Quotation?
+            Need a Custom Quotation or Stock Verification?
           </h3>
-          <p className="text-blue-100 text-sm mt-2 mb-6">
-            Contact us directly via WhatsApp or fill the quotation form for bulk orders.
+          <p className="text-blue-100 text-sm mt-2 mb-6 max-w-xl mx-auto">
+            Contact us directly via WhatsApp or phone for immediate stock updates, current price per tonne / sheet, and local delivery in Dharmapuri.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <button
@@ -150,6 +171,13 @@ export default function ServicesView({ setActiveTab }) {
               <MessageSquare className="w-4 h-4" />
               WhatsApp Us
             </button>
+            <a
+              href={`tel:${COMPANY_INFO.phone}`}
+              className="flex items-center gap-2 px-6 py-3 rounded-lg bg-blue-700 hover:bg-blue-600 text-white font-bold text-sm shadow-md transition-all"
+            >
+              <Phone className="w-4 h-4" />
+              Call Pulikarai Store
+            </a>
             <button
               onClick={() => setActiveTab('contact')}
               className="btn-white text-sm font-bold"

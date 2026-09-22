@@ -31,8 +31,8 @@ export default function Footer({ setActiveTab }) {
                 <h3 className="text-lg font-bold text-white font-heading tracking-tight leading-tight">
                   Bagavan Steels Mart
                 </h3>
-                <p className="text-xs text-sky-400 font-medium mt-0.5">
-                  Founder: {COMPANY_INFO.founder}
+                <p className="text-xs text-slate-400 font-medium mt-0.5">
+                  Roofing & Industrial Steel · Dharmapuri
                 </p>
               </div>
             </div>
@@ -131,9 +131,6 @@ export default function Footer({ setActiveTab }) {
                   </div>
                 </div>
               ))}
-              <p className="text-xs text-slate-300">
-                <span className="font-semibold text-sky-400">Founder:</span> {COMPANY_INFO.founder}
-              </p>
               <p className="text-xs text-slate-400 pl-0">
                 <span className="font-mono text-blue-400">GST:</span> {COMPANY_INFO.gstin}
               </p>
