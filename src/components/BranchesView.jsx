@@ -59,13 +59,24 @@ export default function BranchesView({ setActiveTab }) {
                     {COMPANY_INFO.fullName}
                   </h2>
 
-                  <div className="flex items-start gap-3 p-4 rounded-xl bg-blue-50 border border-blue-100">
-                    <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
-                    <div>
-                      <p className="text-xs font-bold text-blue-700 uppercase tracking-wider mb-1">Address</p>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Pulkarai+Dharmapuri+Main+Road+Dharmapuri+Tamil+Nadu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="Click to open Google Maps"
+                    className="flex items-start gap-3 p-4 rounded-xl bg-blue-50 hover:bg-blue-100/80 border border-blue-200 transition-all group cursor-pointer"
+                  >
+                    <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <p className="text-xs font-bold text-blue-700 uppercase tracking-wider">Address</p>
+                        <span className="text-[11px] text-blue-600 font-semibold group-hover:underline flex items-center gap-1">
+                          Open in Maps <ChevronRight className="w-3 h-3" />
+                        </span>
+                      </div>
                       <p className="text-slate-800 font-semibold text-sm leading-relaxed">{branch.address}</p>
                     </div>
-                  </div>
+                  </a>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <a href={`tel:${branch.phone}`}
@@ -141,15 +152,39 @@ export default function BranchesView({ setActiveTab }) {
               </a>
             </div>
 
-            <div className="relative w-full h-[380px] sm:h-[450px] bg-slate-100">
+            <div className="relative w-full h-[380px] sm:h-[450px] bg-slate-100 group overflow-hidden">
               <iframe
                 title="Bagavan Steels Mart Google Map Location"
                 src="https://maps.google.com/maps?q=Pulkarai,+Dharmapuri+Main+Road,+Dharmapuri,+Tamil+Nadu&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                className="w-full h-full border-0"
+                className="w-full h-full border-0 pointer-events-none scale-100 group-hover:scale-[1.02] transition-transform duration-500"
                 loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
+                tabIndex="-1"
+                aria-hidden="true"
               />
+              
+              {/* Overlay link: clicking or touching anywhere opens Google Maps */}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Pulkarai+Dharmapuri+Main+Road+Dharmapuri+Tamil+Nadu"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="Click anywhere on the map to open in Google Maps"
+                aria-label="Open Bagavan Steels Mart in Google Maps"
+                className="absolute inset-0 z-20 cursor-pointer flex flex-col items-center justify-between p-4 sm:p-6 bg-slate-950/0 hover:bg-slate-950/15 active:bg-slate-950/25 transition-all"
+              >
+                {/* Floating pill badge on top right */}
+                <div className="self-end bg-slate-900/90 hover:bg-slate-900 text-white px-3.5 py-1.5 rounded-full text-xs font-semibold shadow-lg border border-white/20 backdrop-blur-sm flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span>Tap anywhere to open</span>
+                </div>
+
+                {/* Central prompt on hover / touch */}
+                <div className="bg-slate-900/90 text-white px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-bold shadow-2xl border border-white/20 backdrop-blur-md flex items-center gap-2 transform group-hover:scale-105 transition-all duration-300">
+                  <MapPin className="w-4 h-4 text-rose-400 animate-bounce" />
+                  <span>Click / Tap anywhere to open in Google Maps</span>
+                </div>
+
+                <div className="h-4"></div>
+              </a>
             </div>
           </motion.div>
 

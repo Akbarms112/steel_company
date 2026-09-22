@@ -97,10 +97,16 @@ export default function ContactView() {
                     <h3 className="font-bold text-slate-900">{branch.label}</h3>
                   </div>
                 </div>
-                <p className="text-sm text-slate-600 flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                  {branch.address}
-                </p>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Pulkarai+Dharmapuri+Main+Road+Dharmapuri+Tamil+Nadu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open in Google Maps"
+                  className="text-sm text-slate-600 hover:text-blue-700 flex items-start gap-2 group transition-colors"
+                >
+                  <MapPin className="w-4 h-4 text-blue-600 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                  <span className="group-hover:underline">{branch.address}</span>
+                </a>
                 <div className="grid grid-cols-2 gap-2">
                   <a href={`tel:${branch.phone}`}
                      className="flex items-center gap-2 px-3 py-2.5 rounded-lg border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white text-xs font-bold transition-all text-center justify-center">
