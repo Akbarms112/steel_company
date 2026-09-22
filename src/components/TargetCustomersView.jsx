@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TARGET_CUSTOMERS } from '../data/steelData';
-import { Home, HardHat, Building, Factory, Wrench, Tractor, ChevronRight, ArrowRight } from 'lucide-react';
+import { Home, HardHat, Building, Factory, Wrench, Tractor, ChevronRight, ArrowRight, MessageSquare } from 'lucide-react';
 import { COMPANY_INFO } from '../data/steelData';
 
 const iconMap = {
@@ -110,8 +110,9 @@ export default function TargetCustomersView({ setActiveTab }) {
             <div className="flex flex-wrap justify-center gap-3">
               <button
                 onClick={openWhatsApp}
-                className="flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/30 backdrop-blur-md transition-all"
+                className="flex items-center gap-2 px-6 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all"
               >
+                <MessageSquare className="w-4 h-4" />
                 WhatsApp for Bulk Pricing
               </button>
               <button

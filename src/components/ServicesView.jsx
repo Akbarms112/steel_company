@@ -116,7 +116,7 @@ export default function ServicesView({ setActiveTab }) {
                 <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
                   <button
                     onClick={() => openWhatsApp(product.name)}
-                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white text-xs font-bold transition-all"
+                    className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-all shadow-sm"
                   >
                     <MessageSquare className="w-3.5 h-3.5" />
                     WhatsApp Quote
@@ -145,7 +145,7 @@ export default function ServicesView({ setActiveTab }) {
           <div className="flex flex-wrap justify-center gap-3">
             <button
               onClick={() => openWhatsApp('Steel & Roofing Materials')}
-              className="flex items-center gap-2 px-6 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/30 backdrop-blur-md transition-all"
+              className="flex items-center gap-2 px-6 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all"
             >
               <MessageSquare className="w-4 h-4" />
               WhatsApp Us

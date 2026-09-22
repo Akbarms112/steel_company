@@ -488,8 +488,8 @@ function HeroSlider({ setActiveTab }) {
                     Get a Free Quote
                     <ChevronRight className="w-4 h-4" />
                   </button>
-                  <button onClick={openWA} className="flex items-center gap-2 px-6 py-3.5 rounded-lg bg-slate-800/85 hover:bg-slate-700 text-white font-bold text-sm border border-slate-600 shadow-md backdrop-blur-md transition-all">
-                    <MessageSquare className="w-4 h-4 text-emerald-400" />
+                  <button onClick={openWA} className="flex items-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-sm shadow-lg shadow-emerald-900/30 transition-all duration-200">
+                    <MessageSquare className="w-4 h-4" />
                     WhatsApp Us
                   </button>
                 </div>
@@ -670,9 +670,14 @@ function AboutSection({ setActiveTab }) {
               </p>
             </div>
 
-            {/* Branch info */}
-            <div className="grid grid-cols-1 gap-4">
-              {COMPANY_INFO.branches.map((b, i) => (
+            {/* Facility & Founder Info */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4 rounded-xl bg-slate-200/90 border border-slate-300">
+                <p className="text-[10px] font-bold text-blue-700 uppercase tracking-wider mb-1">Founder & Leadership</p>
+                <p className="text-sm font-bold text-slate-900 leading-snug">Mr. {COMPANY_INFO.founder}</p>
+                <p className="text-xs text-slate-600 mt-0.5">Managing Operations & Wholesale Supply</p>
+              </div>
+              {COMPANY_INFO.branches.map((b) => (
                 <div key={b.id} className="p-4 rounded-xl bg-slate-200/90 border border-slate-300">
                   <p className="text-[10px] font-bold text-blue-700 uppercase tracking-wider mb-1">{b.label}</p>
                   <p className="text-xs font-semibold text-slate-800 leading-snug">{b.address}</p>
@@ -684,7 +689,7 @@ function AboutSection({ setActiveTab }) {
               <button onClick={() => setActiveTab('contact')} className="btn-primary">
                 Request Quotation <ChevronRight className="w-4 h-4" />
               </button>
-              <button onClick={openWA} className="btn-outline-blue">
+              <button onClick={openWA} className="flex items-center gap-2 px-5 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md shadow-emerald-900/20 transition-all duration-200">
                 <MessageSquare className="w-4 h-4" /> WhatsApp Us
               </button>
             </div>
@@ -824,10 +829,10 @@ function ProductsSection({ setActiveTab }) {
                         const text = encodeURIComponent(`Hi Bagavan Steels Mart, I would like to inquire about ${product.name}.`);
                         window.open(`https://wa.me/${COMPANY_INFO.whatsapp}?text=${text}`, '_blank');
                       }}
-                      className="p-2.5 rounded-lg bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors"
+                      className="p-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition-colors shadow-sm"
                       title="WhatsApp Enquiry"
                     >
-                      <MessageSquare className="w-4 h-4 text-emerald-400" />
+                      <MessageSquare className="w-4 h-4" />
                     </button>
                   </div>
                 </div>

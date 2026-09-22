@@ -14,26 +14,13 @@ import BranchesView from './components/BranchesView';
 
 import { ArrowUp, MessageSquare } from 'lucide-react';
 import { COMPANY_INFO } from './data/steelData';
-import InitialLoader from './components/InitialLoader';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const { scrollYProgress, scrollY } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
-
-  // Control scrolling while initial loader is active
-  useEffect(() => {
-    if (isLoading) {
-      document.body.style.overflow = 'hidden';
-      if (window.lenis) window.lenis.stop();
-    } else {
-      document.body.style.overflow = '';
-      if (window.lenis) window.lenis.start();
-    }
-  }, [isLoading]);
 
   useEffect(() => {
     return scrollY.on('change', (latest) => {
@@ -44,13 +31,13 @@ export default function App() {
   // Initialize Lenis for luxurious slow smooth scrolling
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.4, // Slower, buttery smooth deceleration
+      duration: 0.85, // Faster, snappier deceleration
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 0.85, // Slower, controlled scroll speed
-      touchMultiplier: 1.5,
+      wheelMultiplier: 1.25, // Snappier, responsive scroll pace
+      touchMultiplier: 1.8,
       infinite: false,
     });
 
@@ -104,13 +91,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 flex flex-col font-sans">
-      {/* ── Initial 3-Second Loading Animation ── */}
-      <AnimatePresence>
-        {isLoading && (
-          <InitialLoader duration={3000} onComplete={() => setIsLoading(false)} />
-        )}
-      </AnimatePresence>
-
       {/* ── Dynamic Top Scroll Progress Bar ── */}
       <motion.div
         style={{ scaleX, transformOrigin: '0%' }}

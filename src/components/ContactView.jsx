@@ -281,11 +281,21 @@ export default function ContactView() {
 
             {/* Business Info */}
             <div className="rounded-2xl p-6 text-white space-y-3 bg-slate-950 border border-slate-800">
-              <h3 className="text-sm font-black uppercase tracking-wider">Business Details</h3>
+              <h3 className="text-sm font-bold uppercase tracking-wider">Business Details</h3>
               <div className="space-y-2 text-sm text-slate-300">
                 <p className="font-bold text-white">{COMPANY_INFO.fullName}</p>
-                <p>GSTIN: <span className="font-mono text-blue-400">{COMPANY_INFO.gstin}</span></p>
-                <p>Rating: <span className="text-amber-400 font-bold">4.7 / 5 ⭐ Verified</span></p>
+                <p className="flex items-center justify-between">
+                  <span>Founder:</span>
+                  <span className="font-bold text-sky-400">{COMPANY_INFO.founder}</span>
+                </p>
+                <p className="flex items-center justify-between">
+                  <span>GSTIN:</span>
+                  <span className="font-mono text-blue-300">{COMPANY_INFO.gstin}</span>
+                </p>
+                <p className="flex items-center justify-between">
+                  <span>Rating:</span>
+                  <span className="text-amber-400 font-bold">4.7 / 5 ⭐ Verified</span>
+                </p>
               </div>
             </div>
 
@@ -295,7 +305,7 @@ export default function ContactView() {
                 const text = encodeURIComponent('Hi Bagavan Steels Mart, I would like to request a quotation.');
                 window.open(`https://wa.me/${COMPANY_INFO.whatsapp}?text=${text}`, '_blank');
               }}
-              className="w-full py-4 rounded-xl flex items-center justify-center gap-2 font-bold text-sm transition-all border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white"
+              className="w-full py-4 rounded-xl flex items-center justify-center gap-2 font-bold text-sm transition-all bg-emerald-600 hover:bg-emerald-500 text-white shadow-md shadow-emerald-900/20 hover:-translate-y-0.5"
             >
               <MessageSquare className="w-5 h-5" />
               Quick WhatsApp Enquiry

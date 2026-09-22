@@ -191,7 +191,7 @@ export default function QuoteView() {
               <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <button
                   type="submit"
-                  className="py-3.5 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-all"
+                  className="py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-emerald-900/20 flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5"
                 >
                   <MessageSquare className="w-4 h-4" />
                   <span>Send via WhatsApp</span>

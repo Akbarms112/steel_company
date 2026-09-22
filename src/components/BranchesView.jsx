@@ -98,7 +98,7 @@ export default function BranchesView({ setActiveTab }) {
                     </button>
                     <button
                       onClick={openWhatsApp}
-                      className="btn-outline-blue text-sm"
+                      className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-900/20 transition-all duration-200"
                     >
                       <MessageSquare className="w-4 h-4" />
                       WhatsApp Us
@@ -117,8 +117,12 @@ export default function BranchesView({ setActiveTab }) {
             transition={{ delay: 0.25, duration: 0.5 }}
             className="rounded-2xl p-8 text-white text-center bg-slate-950 border border-slate-800"
           >
-            <h3 className="text-xl font-black font-heading uppercase mb-4">General Contact</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+            <h3 className="text-xl font-bold font-heading mb-4">General Contact & Business Info</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-sm">
+              <div>
+                <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Founder</p>
+                <p className="font-semibold text-white">{COMPANY_INFO.founder}</p>
+              </div>
               <div>
                 <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-1">Email</p>
                 <a href={`mailto:${COMPANY_INFO.email}`} className="font-semibold hover:underline">

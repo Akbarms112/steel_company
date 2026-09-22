@@ -163,7 +163,7 @@ export default function GalleryView({ setActiveTab }) {
           >
             <p className="text-slate-500 text-sm mb-4">Interested in any of our products?</p>
             <div className="flex flex-wrap justify-center gap-3">
-              <button onClick={openWA} className="btn-primary">
+              <button onClick={openWA} className="flex items-center gap-2 px-5 py-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md transition-all">
                 <MessageSquare className="w-4 h-4" /> Enquire via WhatsApp
               </button>
               <button onClick={() => setActiveTab('contact')} className="btn-outline-blue">

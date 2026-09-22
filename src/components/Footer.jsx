@@ -25,12 +25,15 @@ export default function Footer({ setActiveTab }) {
               <img
                 src="/steel_company/logo.png"
                 alt="Bagavan Steel Mart Logo"
-                className="h-14 w-auto object-contain"
+                className="h-20 sm:h-22 w-auto object-contain drop-shadow-md"
               />
               <div>
-                <h3 className="text-base font-black text-white font-heading tracking-tight leading-tight uppercase">
-                  BAGAVAN<br />STEELS MART
+                <h3 className="text-lg font-bold text-white font-heading tracking-tight leading-tight">
+                  Bagavan Steels Mart
                 </h3>
+                <p className="text-xs text-sky-400 font-medium mt-0.5">
+                  Founder: {COMPANY_INFO.founder}
+                </p>
               </div>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">
@@ -128,6 +131,9 @@ export default function Footer({ setActiveTab }) {
                   </div>
                 </div>
               ))}
+              <p className="text-xs text-slate-300">
+                <span className="font-semibold text-sky-400">Founder:</span> {COMPANY_INFO.founder}
+              </p>
               <p className="text-xs text-slate-400 pl-0">
                 <span className="font-mono text-blue-400">GST:</span> {COMPANY_INFO.gstin}
               </p>

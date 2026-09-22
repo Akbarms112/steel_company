@@ -91,6 +91,18 @@ export default function AboutView({ setActiveTab }) {
               {COMPANY_INFO.aboutStory}
             </p>
 
+            {/* Leadership Spotlight Card */}
+            <div className="flex items-center gap-4 p-5 rounded-2xl bg-gradient-to-r from-blue-50/90 to-slate-100 border border-blue-100 shadow-sm">
+              <div className="w-13 h-13 rounded-xl bg-blue-700 text-white flex items-center justify-center font-bold text-xl font-heading shadow-md shadow-blue-700/20 shrink-0">
+                B
+              </div>
+              <div className="flex-1 min-w-0">
+                <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider">Company Leadership</span>
+                <h3 className="text-lg font-bold text-slate-900 leading-tight">Mr. {COMPANY_INFO.founder}</h3>
+                <p className="text-xs text-slate-600 mt-0.5">Founder & Head · Direct Customer Support & Mill Wholesale Orders</p>
+              </div>
+            </div>
+
             {/* Trust items */}
             <div className="space-y-3">
               {TRUST_ELEMENTS.slice(0, 3).map((item, idx) => (
@@ -114,7 +126,7 @@ export default function AboutView({ setActiveTab }) {
               </button>
               <button
                 onClick={openWhatsApp}
-                className="btn-outline-blue text-sm"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-900/20 transition-all duration-200"
               >
                 <MessageSquare className="w-4 h-4" />
                 WhatsApp Us
@@ -173,18 +185,26 @@ export default function AboutView({ setActiveTab }) {
 
         {/* ── Business Details ── */}
         <div className="rounded-2xl p-8 text-white bg-slate-950 border border-slate-800">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-            <div>
-              <p className="text-3xl font-black font-heading">GSTIN</p>
-              <p className="font-mono text-blue-200 font-semibold mt-1">{COMPANY_INFO.gstin}</p>
+          <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 text-center divide-y sm:divide-y-0 sm:divide-x divide-slate-800">
+            <div className="pt-4 sm:pt-0">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Founder</p>
+              <p className="text-2xl font-bold font-heading text-white mt-1">{COMPANY_INFO.founder}</p>
+              <p className="text-blue-300 text-xs mt-0.5">Founder & Head</p>
             </div>
-            <div>
-              <p className="text-3xl font-black font-heading">4.7 ★</p>
-              <p className="text-blue-200 font-semibold mt-1">Verified Public Rating</p>
+            <div className="pt-4 sm:pt-0">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">GSTIN</p>
+              <p className="font-mono text-blue-200 font-semibold text-base sm:text-lg mt-1">{COMPANY_INFO.gstin}</p>
+              <p className="text-slate-400 text-xs mt-0.5">Registered Firm</p>
             </div>
-            <div>
-              <p className="text-3xl font-black font-heading">Jindal</p>
-              <p className="text-blue-200 font-semibold mt-1">PPGL Authorized Supplier</p>
+            <div className="pt-4 sm:pt-0">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Verified Rating</p>
+              <p className="text-2xl font-bold font-heading text-amber-400 mt-1">4.7 ★</p>
+              <p className="text-blue-200 text-xs mt-0.5">Customer Trust</p>
+            </div>
+            <div className="pt-4 sm:pt-0">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Distributor</p>
+              <p className="text-2xl font-bold font-heading text-white mt-1">Jindal</p>
+              <p className="text-blue-200 text-xs mt-0.5">PPGL Roofing Sheets</p>
             </div>
           </div>
         </div>
