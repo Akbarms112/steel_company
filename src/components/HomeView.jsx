@@ -70,29 +70,29 @@ const heroSlides = [
   {
     img: STEEL_IMAGES.roofingJindal,
     label: 'Verified Jindal Supplier',
-    title: 'QUALITY STEEL &',
-    highlight: 'ROOFING SOLUTIONS',
+    title: 'Quality Steel &',
+    highlight: 'Roofing Solutions',
     sub: 'Reliable steel and roofing materials for homes, businesses, civil contractors and industrial projects in Dharmapuri.',
   },
   {
     img: STEEL_IMAGES.hero,
     label: 'Trapezoidal PPGL Sheets',
-    title: 'JINDAL TRAPEZOIDAL',
-    highlight: 'PPGL ROOFING SHEETS',
+    title: 'Jindal Trapezoidal',
+    highlight: 'PPGL Roofing Sheets',
     sub: 'ISO certified weather-resistant colour coated PPGL roofing sheets for sheds, warehouses and residential homes.',
   },
   {
     img: STEEL_IMAGES.tmtRods,
-    label: 'High Strength TMT Steel',
-    title: 'CERTIFIED TMT &',
-    highlight: 'REINFORCEMENT STEEL',
+    label: 'High-Strength TMT Steel',
+    title: 'Certified TMT &',
+    highlight: 'Reinforcement Steel',
     sub: 'Earthquake-resistant high yield strength TMT bars and mild steel rods for home foundations and civil structures.',
   },
   {
     img: STEEL_IMAGES.structuralMain,
     label: 'Structural Steel',
-    title: 'MS ANGLES, CHANNELS',
-    highlight: 'BEAMS & MS PIPES',
+    title: 'MS Angles, Channels',
+    highlight: 'Beams & Industrial Pipes',
     sub: 'Equal angles, C-channels, flat bars, MS plates, square and round pipes for custom fabrication.',
   },
 ];
@@ -470,7 +470,7 @@ function HeroSlider({ setActiveTab }) {
                 </motion.div>
 
                 {/* Headline */}
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-none tracking-tight font-heading text-white uppercase">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight font-heading text-white">
                   {slide.title}
                   <br />
                   <span className="text-sky-400 block mt-1">
@@ -545,7 +545,7 @@ function StatsBar() {
               <p className="text-4xl font-black font-heading text-white leading-none">
                 <Counter end={s.value} suffix={s.suffix} />
               </p>
-              <p className="text-xs text-slate-400 font-semibold uppercase tracking-widest mt-2">
+              <p className="text-xs text-slate-400 font-medium mt-2">
                 {s.label}
               </p>
             </Reveal>
@@ -654,12 +654,8 @@ function AboutSection({ setActiveTab }) {
           <Reveal variant={fadeRight} className="space-y-7">
             <div>
               <span className="section-label bg-slate-200 border-slate-300 text-blue-700">Company Overview</span>
-              <h2 className="text-4xl sm:text-5xl font-black text-slate-900 font-heading uppercase leading-tight mt-4">
-                YOUR TRUSTED
-                <br />
-                <span className="text-gradient-blue">STEEL & ROOFING</span>
-                <br />
-                SUPPLIER
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 font-heading leading-tight mt-4">
+                Your Trusted <span className="text-gradient-blue">Steel & Roofing</span> Supplier
               </h2>
               <AnimatedDivider className="mt-5" />
             </div>
@@ -738,8 +734,8 @@ function ProductsSection({ setActiveTab }) {
 
         <Reveal className="text-center mb-16">
           <span className="section-label">Verified Product Range</span>
-          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 font-heading uppercase mt-4">
-            OUR PRODUCT <span className="text-gradient-blue">CATEGORIES</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 font-heading leading-tight mt-4">
+            Our Product <span className="text-gradient-blue">Categories</span>
           </h2>
           <p className="text-slate-500 mt-4 max-w-xl mx-auto">
             Quality-assured, competitively priced steel and roofing materials serving Dharmapuri and surrounding regions.
@@ -775,10 +771,10 @@ function ProductsSection({ setActiveTab }) {
 
                 
                 <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/85 to-transparent pt-14 pb-6 px-6 flex flex-col justify-end transition-all duration-400 group-hover:opacity-0 group-hover:translate-y-4 pointer-events-none z-10">
-                  <span className="text-red-400 text-[10px] font-bold uppercase tracking-widest mb-1.5 font-mono">
+                  <span className="text-red-400 text-xs font-semibold mb-1">
                     {product.category}
                   </span>
-                  <h3 className="text-lg sm:text-xl font-black text-white font-heading leading-snug">
+                  <h3 className="text-lg sm:text-xl font-bold text-white font-heading leading-snug">
                     {product.name}
                   </h3>
                   <div className="flex items-center gap-1.5 text-slate-400 text-[11px] mt-2 font-medium">
@@ -789,10 +785,10 @@ function ProductsSection({ setActiveTab }) {
 
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/92 to-slate-950/70 p-6 flex flex-col justify-end opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 backdrop-blur-[2px]">
-                  <span className="text-red-400 text-xs font-bold uppercase tracking-wider font-mono">
+                  <span className="text-red-400 text-xs font-semibold">
                     {product.category}
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-black text-white font-heading leading-tight mt-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white font-heading leading-tight mt-1">
                     {product.name}
                   </h3>
 
@@ -860,12 +856,8 @@ function WhyUsSection() {
 
           <Reveal variant={fadeLeft}>
             <span className="section-label bg-slate-800 border-slate-700 text-sky-400">Why Choose Us</span>
-            <h2 className="text-4xl sm:text-5xl font-black font-heading uppercase mt-4 leading-tight text-white">
-              THE BAGAVAN
-              <br />
-              <span className="text-sky-400">
-                STEELS ADVANTAGE
-              </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-heading mt-4 leading-tight text-white">
+              The Bagavan <span className="text-sky-400">Steels Advantage</span>
             </h2>
             <AnimatedDivider className="mt-5" />
             <p className="text-slate-300 mt-5 leading-relaxed">
@@ -913,8 +905,8 @@ function GalleryPreview({ setActiveTab }) {
         <div className="flex items-end justify-between mb-12">
           <Reveal>
             <span className="section-label bg-slate-200 border-slate-300 text-blue-700">Gallery</span>
-            <h2 className="text-4xl sm:text-5xl font-black text-slate-900 font-heading uppercase mt-4">
-              OUR STOCK <span className="text-gradient-blue">SHOWCASE</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 font-heading leading-tight mt-4">
+              Our Materials <span className="text-gradient-blue">Showcase</span>
             </h2>
             <AnimatedDivider className="mt-5" />
           </Reveal>
@@ -999,15 +991,16 @@ function CTABanner({ setActiveTab }) {
     window.open(`https://wa.me/${COMPANY_INFO.whatsapp}?text=${text}`, '_blank');
   };
   return (
-    <section ref={ref} className="relative py-24 overflow-hidden border-t border-slate-800 bg-slate-900">
+    <section ref={ref} className="relative py-24 overflow-hidden border-t border-slate-700/60 bg-[#1e2532]">
       <motion.div style={{ y: bgY }} className="absolute inset-0">
-        <img src={STEEL_IMAGES.warehouse} alt="" className="w-full h-full object-cover scale-110 opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/95 to-blue-950/90" />
+        <img src={STEEL_IMAGES.warehouse} alt="" className="w-full h-full object-cover scale-110 opacity-20 grayscale mix-blend-luminosity" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1c2433] via-[#243042] to-[#1f2838]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(56,189,248,0.06),transparent_60%)]" />
       </motion.div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           <Reveal variant={fadeLeft} className="space-y-3 text-white text-center md:text-left">
-            <span className="section-label bg-slate-800 border-slate-700 text-sky-400">Instant Quotation</span>
+            <span className="section-label bg-slate-700/60 border-slate-600/70 text-sky-300">Instant Quotation</span>
             <h2 className="text-3xl sm:text-4xl font-black font-heading uppercase mt-3 text-white">
               Need Fast Pricing<br />& Stock Status?
             </h2>
@@ -1016,7 +1009,7 @@ function CTABanner({ setActiveTab }) {
             </p>
             <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-1">
               {COMPANY_INFO.mobiles.map((num, i) => (
-                <a key={i} href={`tel:${num}`} className="flex items-center gap-1.5 text-sm text-sky-400 hover:text-sky-300 transition-colors font-semibold">
+                <a key={i} href={`tel:${num}`} className="flex items-center gap-1.5 text-sm text-slate-300 hover:text-sky-300 transition-colors font-semibold">
                   <Phone className="w-4 h-4 text-sky-400" /> {num}
                 </a>
               ))}

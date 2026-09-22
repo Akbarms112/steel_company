@@ -26,8 +26,8 @@ export default function ServicesView({ setActiveTab }) {
           <span className="section-label bg-white/10 border-white/20 text-white text-xs">
             Steel & Roofing Inventory
           </span>
-          <h1 className="text-4xl sm:text-5xl font-black uppercase tracking-tight font-heading">
-            OUR <span className="text-gradient-metallic">PRODUCT CATALOG</span>
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-heading">
+            Our <span className="text-gradient-metallic">Product Catalog</span>
           </h1>
           <p className="text-slate-300 text-base max-w-xl mx-auto">
             Jindal Trapezoidal PPGL Sheets, TMT Bars, MS Structural Sections, and Steel Pipes — quality assured, competitively priced.

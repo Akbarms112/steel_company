@@ -18,8 +18,8 @@ export default function BranchesView({ setActiveTab }) {
           <span className="section-label bg-white/10 border-white/20 text-white text-xs">
             Distribution Network
           </span>
-          <h1 className="text-4xl sm:text-5xl font-black uppercase tracking-tight font-heading">
-            OUR FACILITY IN <span className="text-gradient-metallic">DHARMAPURI</span>
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-heading">
+            Our Facility in <span className="text-gradient-metallic">Dharmapuri</span>
           </h1>
           <p className="text-slate-300 text-base max-w-xl mx-auto">
             Prime facility located at Pulkarai on Dharmapuri Main Road — ensuring fast, reliable supply of steel and roofing materials.

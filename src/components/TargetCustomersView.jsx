@@ -28,8 +28,8 @@ export default function TargetCustomersView({ setActiveTab }) {
           <span className="section-label bg-white/10 border-white/20 text-white text-xs">
             Target Segments & Applications
           </span>
-          <h1 className="text-4xl sm:text-5xl font-black uppercase tracking-tight font-heading">
-            INDUSTRIES & <span className="text-gradient-metallic">CUSTOMERS</span>
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-heading">
+            Industries & <span className="text-gradient-metallic">Applications</span>
           </h1>
           <p className="text-slate-300 text-base max-w-xl mx-auto">
             We supply specialized steel and roofing materials tailored for homeowners, contractors, factories, fabricators, and agricultural structures.
@@ -44,8 +44,8 @@ export default function TargetCustomersView({ setActiveTab }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <span className="section-label">Who We Serve</span>
-            <h2 className="text-3xl font-black text-slate-900 font-heading uppercase mt-4">
-              SERVING ALL <span className="text-gradient-blue">CONSTRUCTION NEEDS</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 font-heading mt-4">
+              Serving Every <span className="text-gradient-blue">Construction Need</span>
             </h2>
             <div className="section-divider mx-auto mt-4"></div>
           </div>

@@ -64,10 +64,10 @@ export default function GalleryView({ setActiveTab }) {
               <span className="w-1.5 h-1.5 rounded-full bg-blue-400 inline-block" />
               Photo Showcase & Inventory
             </span>
-            <h1 className="text-4xl sm:text-5xl font-black uppercase tracking-tight font-heading">
-              BAGAVAN STEELS
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-heading">
+              Bagavan Steels{' '}
               <span style={{ background:'linear-gradient(90deg,#93C5FD,#BFDBFE)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>
-                {' '}GALLERY
+                Gallery
               </span>
             </h1>
             <p className="text-white/65 mt-3 text-sm max-w-lg mx-auto">

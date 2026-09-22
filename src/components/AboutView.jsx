@@ -18,8 +18,8 @@ export default function AboutView({ setActiveTab }) {
           <span className="section-label bg-white/10 border-white/20 text-white text-xs">
             Company Overview & Profile
           </span>
-          <h1 className="text-4xl sm:text-5xl font-black uppercase tracking-tight font-heading">
-            ABOUT <span className="text-gradient-metallic">BAGAVAN STEELS MART</span>
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-heading">
+            About <span className="text-gradient-metallic">Bagavan Steels Mart</span>
           </h1>
           <p className="text-slate-300 text-base max-w-xl mx-auto">
             Steel & Roofing Materials Supplier serving residential, commercial and construction requirements across Dharmapuri and nearby areas.
@@ -75,9 +75,9 @@ export default function AboutView({ setActiveTab }) {
           >
             <div>
               <span className="section-label">About Us</span>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 uppercase tracking-tight font-heading mt-4 leading-tight">
-                DEPENDABLE MATERIALS FOR{' '}
-                <span className="text-gradient-blue">YOUR CONSTRUCTION NEEDS</span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 font-heading mt-4 leading-tight">
+                Dependable Materials for{' '}
+                <span className="text-gradient-blue">Your Construction Needs</span>
               </h2>
             </div>
 
@@ -127,8 +127,8 @@ export default function AboutView({ setActiveTab }) {
         <div>
           <div className="text-center mb-10">
             <span className="section-label">Our Location</span>
-            <h2 className="text-3xl font-black text-slate-900 font-heading uppercase mt-4">
-              CENTRAL <span className="text-gradient-blue">FACILITY</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-heading mt-4">
+              Central <span className="text-gradient-blue">Facility</span>
             </h2>
             <div className="section-divider mx-auto mt-4"></div>
           </div>

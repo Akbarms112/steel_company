@@ -14,13 +14,26 @@ import BranchesView from './components/BranchesView';
 
 import { ArrowUp, MessageSquare } from 'lucide-react';
 import { COMPANY_INFO } from './data/steelData';
+import InitialLoader from './components/InitialLoader';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { scrollYProgress, scrollY } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
+
+  // Control scrolling while initial loader is active
+  useEffect(() => {
+    if (isLoading) {
+      document.body.style.overflow = 'hidden';
+      if (window.lenis) window.lenis.stop();
+    } else {
+      document.body.style.overflow = '';
+      if (window.lenis) window.lenis.start();
+    }
+  }, [isLoading]);
 
   useEffect(() => {
     return scrollY.on('change', (latest) => {
@@ -91,6 +104,13 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900 flex flex-col font-sans">
+      {/* ── Initial 3-Second Loading Animation ── */}
+      <AnimatePresence>
+        {isLoading && (
+          <InitialLoader duration={3000} onComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
       {/* ── Dynamic Top Scroll Progress Bar ── */}
       <motion.div
         style={{ scaleX, transformOrigin: '0%' }}

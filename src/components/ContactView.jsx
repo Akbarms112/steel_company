@@ -46,8 +46,8 @@ export default function ContactView() {
           <span className="section-label bg-white/10 border-white/20 text-white text-xs">
             Official Contact & Lead System
           </span>
-          <h1 className="text-4xl sm:text-5xl font-black uppercase tracking-tight font-heading">
-            CONTACT & <span className="text-gradient-metallic">GET QUOTE</span>
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight font-heading">
+            Contact Us & <span className="text-gradient-metallic">Get a Quote</span>
           </h1>
           <p className="text-slate-300 text-base max-w-xl mx-auto">
             Get instant pricing, place wholesale orders, or visit our main facility at Dharmapuri Main Road, Pulkarai.
@@ -73,8 +73,8 @@ export default function ContactView() {
         <div>
           <div className="text-center mb-8">
             <span className="section-label">Our Location</span>
-            <h2 className="text-2xl font-black text-slate-900 font-heading uppercase mt-3">
-              VISIT OUR <span className="text-gradient-blue">FACILITY</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 font-heading mt-3">
+              Visit Our <span className="text-gradient-blue">Main Facility</span>
             </h2>
             <div className="section-divider mx-auto mt-3"></div>
           </div>

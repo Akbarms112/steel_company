@@ -20,14 +20,15 @@
 
 @layer base {
   body {
-    font-family: 'Bai Jamjuree', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #f1f5f9; 
     color: #0f172a;
     -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
   }
   h1, h2, h3, h4, h5, h6, .font-heading {
-    font-family: 'Bai Jamjuree', sans-serif;
-    letter-spacing: -0.015em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.025em;
   }
 }
 
@@ -130,16 +131,16 @@ html.lenis, html.lenis body {
 .section-label {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 1rem;
+  gap: 0.45rem;
+  padding: 0.35rem 0.9rem;
   border-radius: 9999px;
   background: #E2E8F0;
   border: 1px solid #CBD5E1;
   color: #1D4ED8;
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: -0.01em;
 }
 
 

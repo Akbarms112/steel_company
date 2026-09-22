@@ -45,10 +45,10 @@ export default function Navbar({ activeTab, setActiveTab }) {
             className="h-13 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
           />
           <div className="hidden sm:block text-left">
-            <div className="text-lg font-black tracking-tight text-slate-900 font-heading leading-tight uppercase">
-              BAGAVAN STEELS MART
+            <div className="text-lg font-bold tracking-tight text-slate-900 font-heading leading-tight">
+              Bagavan Steels Mart
             </div>
-            <p className="text-[11px] text-slate-600 font-medium uppercase tracking-wider flex items-center gap-1">
+            <p className="text-[11px] text-slate-500 font-medium flex items-center gap-1">
               <ShieldCheck className="w-3 h-3 text-blue-600 inline" />
               Roofing & Industrial Steel · Dharmapuri
             </p>
@@ -63,10 +63,10 @@ export default function Navbar({ activeTab, setActiveTab }) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative px-3 py-2 rounded-lg text-xs font-bold uppercase tracking-wider whitespace-nowrap shrink-0 transition-all duration-200 ${
+                className={`relative px-3.5 py-2 rounded-lg text-sm font-semibold whitespace-nowrap shrink-0 transition-all duration-200 ${
                   isActive
-                    ? 'text-blue-700 bg-blue-500/15 border-b-2 border-blue-600'
-                    : 'text-slate-700 hover:text-blue-700 hover:bg-slate-200/70'
+                    ? 'text-blue-700 bg-blue-500/10 border-b-2 border-blue-600'
+                    : 'text-slate-700 hover:text-blue-700 hover:bg-slate-200/60'
                 }`}
               >
                 {item.label}
